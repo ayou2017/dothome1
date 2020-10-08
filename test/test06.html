@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{margin: 0; padding: 0;}
+    #wrap {}
+    #header {height: 200px; background-color: #111;}
+    #banner {height: 400px; background-color: #222;}
+    #contants {height: 1600px; background-color: #333;}
+    #footer {height: 200px; background-color: #444;}
+
+    #contants1 {height: 300px; background-color:#555;}
+    #contants2 {height: 300px; background-color: #666;}
+    #contants3 {height: 300px; background-color: #777;}
+    #contants4 {height: 300px; background-color: #888;}
+    #contants5 {height: 300px; background-color: #999;}
+    #contants6 {height: 200x; background-color: #000000;}
+    
+    .container {width: 1280px; height: inherit; margin: 0 auto; background-color: rgba(255, 255, 255, 0.3);}
+    .cont6 {overflow: hidden;}
+    .cont6 .left {position: relative; width: 600px; height: 100%; padding: 20px; float: left;}
+    .cont6 .right {position: relative; width: 600px; height: 100%; padding: 20px; float: left;}
+    .cont6 .left .more {position: absolute; right: 20px; top: 20px;}
+    .cont6 .right .more {position: absolute; right: 20px; top: 20px;}
+</style>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="container">header</div>
+        </div>
+        <div id="banner">
+            <div class="container">banner</div>
+        </div>
+        <div id="contants">
+            <div id="contants1">
+                <div class="container">contants1</div>
+            </div>
+            <div id="contants2">
+                <div class="container">contants2</div>
+            </div>
+            <div id="contants3">
+                <div class="container">contants3</div>
+            </div>
+            <div id="contants4">
+                <div class="container">contants4</div>
+            </div>
+            <div id="contants5">
+                <div class="container">contants5</div>
+            </div>
+            <div id="contants6">
+                <div class="container">
+                    <div class="cont6">
+                        <div class="left">
+                            <h3>공지사항</h3>
+                            <p>시스템 점검안내(09.10 00:00~07:00)</p>
+                            <span>2020.08.31</span>
+                            <a href="#" class="more ir_pm" title="더보기">더보기</a>
+                        </div>
+                        <div class="right">
+                            <h3>당첨자 발표</h3>
+                            <p>9월 출설체크하고 포인트 받자</p>
+                            <span>2020.10.06</span>
+                            <a href="#" class="more ir_pm" title="더보기">더보기</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="container">footer</div>
+        </div>
+    </div>
+</body>
+</html>

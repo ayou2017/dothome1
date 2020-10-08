@@ -9,7 +9,7 @@
 #contents {}
 #footer {height: 200px; background: #333;}
 
-/* 컨텐프 레이아웃*/
+/* 컨텐츠 레이아웃*/
 #cont_nav {background: #f6fdff;}
 #cont_tit {background: #eaf7fd;}
 #cont_ban {background: #dceff7;}
@@ -109,4 +109,5 @@
 .notice ul li {padding-left: 8px; background:url(../img/dot.gif) no-repeat 0 8px;  overflow: hidden; white-space: nowrap; text-overflow: ellipsis;} /* 한줄 효과*/
 .notice ul li a {font-size: 12px;}
 .notice a.more{position: absolute; right: 0; top: 0; width: 17px; height: 17px; display: block; background:url(../img/icon.png) -150px -90px;}
+
 

@@ -155,9 +155,30 @@
 .notice_hover2 li a span:hover em {visibility: visible;}
 .notice_hover2 li a strong {font-size: 12px padding 3px; display: inline-block;}
 
-
 /*콘텐스 요소를 보이지 않게 하는 방법*/
 /* 1. display: none; <--> disply: block (영역이 사라짐)
 2.visibiility: hidden; <--> visibility: visible; (영역유지)
 3.opacity: 0; <--> opacity: 1; (영역유지)(애니매이션 가능)
 4.width: 0; height: 0; overflew:hidden (IR효과) */
+
+/* 탭 메뉴*/
+.tap_menu {position: relative; border: 1px solid #ccc; padding: 8px; height: 105px;}
+.tap_menu ul {overflow: hidden; border-bottom: 1px solid #ccc;}
+.tap_menu ul li {float: left; border: 1px solid #CCC; margin-right: -1px; }
+.tap_menu ul li a {padding: 5px 10px; display: block;}
+.tap_menu ul li ul {position: absolute; left: 0; top: 48px; border-bottom: 0;}
+.tap_menu ul li ul li {border: 0; float: none; padding-left: 18px; background: url(../img/dot.gif) no-repeat 9px 8px;}
+.tap_menu ul li ul li a {padding: 0 0 3px 0;}
+.tap_menu ul li.active {background-color: #2c94c4;}
+.tap_menu ul li.active a {color: #fff;}
+.tap_menu ul li.active ul li a {color: #333;}
+
+/* 게시판 4 */
+.notice4 {position: relative; border: 1px solid #ccc; margin-top: 15px;}
+.notice4 h4 {border-bottom: 1px solid #ccc; padding: 8px 10px;}
+.notice4 h4 em {color:#cf3292;}
+.notice4 ul {padding: 10px;}
+.notice4 ul li {overflow: hidden; background: url(../img/dot.gif) no-repeat 0 8px; padding-left: 8px;}
+.notice4 ul li a {float: left; width: 65%; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;}
+.notice4 ul li span {float: right; width: 30%; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; text-align: right;}
+.notice4 a.more {position: absolute; right: 9px; top: 9px;}

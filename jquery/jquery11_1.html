@@ -68,6 +68,59 @@
         document.write("<br>");
 
         
+
+        //다시해보기//
+
+        //객체 생성자 함수 (함수+인스턴스 객체(매개변수))
+        function You3(name, job){
+            this.name = name;
+            this.job = job;
+            this.study = function(){
+                document.write("내 이름은 " + this.name + "이며, 직업은 " + this.job + "입니다.","<br>");
+            }
+        }
+        let char1 = new You3("웹쓰","웹 퍼블리셔");
+        let char2 = new You3("웹스토리보이","프로트앤드 개발자");
+
+        Char1.study();
+        Char2.study();
+        document.write("<br>");
+
+        //프로토타입 메서드
+        function You4(name, job){
+            this.name =name;
+            this.job = job;
+        }
+        You4.prototype.study = function(){
+            document.write("내 이름은 " + this.name + "이며, 직업은 " + this.job + "입니다.","<br>");
+        }
+
+        let Char3 =new You4("웹쓰", "웹 퍼블리셔");
+        let Char4 =new You4("웹스토리보이", "프론트앤드 개발자");
+
+        Char3.study();
+        Char4.study();
+
+        //객체 리터럴
+        function You5(name, job){
+            this.name = name;
+            this.job = job;
+        }
+        You5.prototype = {
+            study1 : function(){
+                document.write("내 이름은 " + this.name + "이며, 직업은 " + this.job + "입니다.","<br>");
+            },
+            study2 : function(){
+                document.write("내 이름은 " + this.name + "이며, 직업은 " + this.job + "입니다.","<br>");
+            }
+        }
+        let Char5 =new You5("웹쓰", "웹 퍼블리셔");
+        let Char6 =new You5("웹스토리보이", "프론트앤드 개발자");
+
+        Char5.study();
+        Char6.study();
+
+        
     </script>
 </head>
 <body>

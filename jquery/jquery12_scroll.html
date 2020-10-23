@@ -7,28 +7,28 @@
     <style>
         body {height: 10000px; width: 10000px;}
         div {width: 100px; height: 100px; color: #c7254e; background-color: #f9f2f4; border-radius: 50%; border: 1px dashed #a51a3d; text-align: center; line-height: 100;}
-        .sorollTop {position: fixed; left: 30px; top: 30px;}
-        .sorollTop::before {content:'sorollTop ';}
-        .sorollLeft {position: fixed; left: 150px; top: 30px;}
-        .sorolllLeft::before {content:'sorolllLeft ';}
+        .scrollTop {position: fixed; left: 30px; top: 30px;}
+        .scrollTop::before {content:'sorollTop ';}
+        .scrollLeft {position: fixed; left: 150px; top: 30px;}
+        .scrolllLeft::before {content:'sorolllLeft ';}
 
     </style> 
 </head>
 <body>
 
-    <div class="sorollTop">0</div>
-    <div class="sorollLeft">0</div>
+    <div class="scrollTop">0</div>
+    <div class="scrollLeft">0</div>
 
     <!-- script -->
     <script src="jquery.min_1.12.4.js"></script>
     <script>
-        $(window).soroll(function(){
-            const sorollTop =$(window).sorollTop();
-            const sorollLeft =$(window).sorollleft();
+        $(window).scroll(function(){
+            const scrollTop =$(window).scrollTop();
+            const scrollLeft =$(window).scrollleft();
 
-            $(".sorollTop").text(sorollTop);
-            $(".sorollLeft").text(sorollLeft);
+            $(".scrollTop").text(scrollTop);
+            $(".scrollLeft").text(scrollLeft);
         })
     </script>
-</body>
+
 </html>

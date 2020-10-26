@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{margin: 0; padding: 0;}
+
+    .container {width: 100%; margin: 0 auto;}
+    header {width: 100%; height: 100px; background-color: #ffcdd2;}
+    aside {width: 30%; height: 900px; background-color: #ef9a9a; float: left;}
+    .article1 {width: 70%; height: 300px;background-color: #ef5350; float: left;}
+    .article2 {width: 70%; height: 300px;background-color: #f44336; float: left;}
+    .article3 {width: 70%; height: 300px;background-color: #e53935; float: left;}
+    footer {width: 100%; height: 100px; background-color: #c62828; clear: both;}
+
+    /*1280*/
+    @media (max-width: 1280px){
+        .container {width: 100%;}
+        .article1 {height: 450px;}
+        .article2 {height: 450px;}
+        .article3 {width: 100%;}
+    }
+    /*900*/
+    @media (max-width: 900px){
+        header {width: 100%; height: 200px;}
+        aside {width: 100%; height: 200px;}
+        .article1 {width: 50%; height: 450px;}
+        .article2 {width: 50%; height: 450px;}
+    }
+    /*480*/
+    @media (max-width: 480px){
+        .article1 {width: 100%; height: 300px;}
+        .article2 {width: 100%; height: 300px;}
+    }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="container">
+            <header></header>
+            <aside></aside>
+            <article>
+                <article class="article1"></article>
+                <article class="article2"></article>
+                <article class="article3"></article>
+            </article>
+            <footer></footer>
+        </div>
+    </div>
+</body>
+</html>

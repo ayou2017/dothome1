@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        #wrap {}
+        .containar {width: 1200px;; margin: 0 auto;}
+        #header {width: 100%; height: 100px; background-color: #b1dffe;}
+        #aside {width: 100%; height: 200px; background-color: #7cccfe;}
+        #cont1 {overflow: hidden;}
+        .cont1-art1 {width: 30%; height: 300px; background-color: #3db7fc; float: left;}
+        .cont1-art2 {width: 70%; height: 150px; background-color: #00a8fc; float: left;}
+        .cont1-art3 {width: 70%; height: 150px; background-color: #0099fa; float: left;}
+        #cont2 {overflow: hidden;}
+        .cont2-art1 {width: 33.3333%; height: 200px; background-color: #008bec; float: left;}
+        .cont2-art2 {width: 33.3333%; height: 200px; background-color: #007ad9; float: left;}
+        .cont2-art3 {width: 33.3333%; height: 200px; background-color: #0068c7; float: left;}
+        #cont3 {width: 90%; height: 200px; padding: 5%; background-color: #00a8fc; overflow: hidden;}
+        .cont3-art1 {width: 23%; height: 150px; margin: 1%; background-color: #007ad9; float: left;}
+        .cont3-art2 {width: 23%; height: 150px; margin: 1%; background-color: #007ad9; float: left;}
+        .cont3-art3 {width: 23%; height: 150px; margin: 1%; background-color: #007ad9; float: left;}
+        .cont3-art4 {width: 23%; height: 150px; margin: 1%; background-color: #007ad9; float: left;}
+        #footer {height: 100px; background-color: #3db7fc;}
+
+        @media(max-width: 1210px){
+            .containar {width: 100%;}
+            .cont2-art1 {width: 50%;}
+            .cont2-art2 {width: 50%;}
+            .cont2-art3 {display: none;}
+            .cont3-art1 {width: 23%; margin: 4%;}
+            .cont3-art2 {width: 23%; margin: 4%;}
+            .cont3-art3 {width: 23%; margin: 4%;}
+            .cont3-art4 {display: none;}
+        }
+        @media(max-width: 900px){
+            .containar {width: 100%;}
+            .cont2-art1 {width: 100%;}
+            .cont2-art2 {width: 100%;}
+        }
+        @media(max-width: 480px){
+            .containar {width: 100%;}
+            .cont1-art1 {width: 100%;}
+            .cont1-art2 {width: 100%;}
+            .cont1-art3 {width: 100%;}
+            #cont3 {height: 500px;}
+            .cont3-art1 {width: 90%; margin: 2%;}
+            .cont3-art2 {width: 90%; margin: 2%;}
+            .cont3-art3 {width: 90%; margin: 2%;}
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="containar">
+            <header id="header"></header>
+            <aside id="aside"></aside>
+            <section id="cont1">
+                <article class="cont1-art1"></article>
+                <article class="cont1-art2"></article>
+                <article class="cont1-art3"></article> 
+            </section>
+            <section id="cont2">
+                <article class="cont2-art1"></article>
+                <article class="cont2-art2"></article>
+                <article class="cont2-art3"></article> 
+            </section>
+            <section id="cont3">
+                <article class="cont3-art1"></article>
+                <article class="cont3-art2"></article>
+                <article class="cont3-art3"></article> 
+                <article class="cont3-art4"></article> 
+            </section>
+            <footer id="footer"></footer>
+        </div>
+    </div>
+</body>
+</html>

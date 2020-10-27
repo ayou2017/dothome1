@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=+, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //선언적함수
+        function func1(){
+            document.write("함수1이 실행되었습니다.");
+        }
+        func1();
+        //익명함수
+        const func2 = function(){
+            document.write("함수2이 실행되었습니다.");
+        }
+        func2();
+        //매개변수함수
+        const func3=function(name){
+            document.write(name+"이 실행되었습니다.");
+        }
+        func3("함수3");
+        //리턴값함수
+        function func4(){
+            const str = "함수4가 실행되었습니다.";
+            return str;
+        }
+        document.write(func4());
+
+
+        //객체 메서드
+        const info = {
+            name : "함수5",
+            active : "실행",
+            study : function(){
+                document.write(this.name+"가"+this.active+"되었습니다.");
+            }
+        }
+        info.study();
+
+        /*//객체 생성자
+        function Info1(name, active){
+            this.name = name;
+            this.active = active;
+            study = function(){
+                document.write(this.name+"가"+this.active+"되었습니다.");
+        }
+        const result = new Info1("함수6","실행");
+        result.study();*/
+
+        //프로토타입 메서드
+        function Info2(name,active){
+            this.name = name;
+            this.active = active;
+        }
+        Info2.prototype.study = function(){
+            document.write(this.name+"가"+this.active+"되었습니다.");
+        }
+        const result2 = new Info("함수7","실행");
+        result2.study();
+
+        //클래스
+        class Info3 {
+            constructor(name,active){
+                this.name = name;
+                this.active = active;
+            }
+            study(){
+                document.write(this.name+"가"+this.active+"되었습니다.");
+            }
+        }
+        const result3 = new Info3("함수8","실행")
+        result3.study();
+
+        //클래스 상속
+        class box1 {
+            constructor(name,active){
+                this.name = name;
+                this.active = active;
+            }
+            study(){
+                document.write(this.name+"가"+this.active+"되었습니다.");
+            }
+        }
+        class Box2 extends Box1 {
+            constructor(name, active, today){
+                super(name, active)
+                this.today = today;
+            }
+            study2(){
+                document.write(this.today + this.name + "가" + this.active + "되었습니다.");
+            }
+        }
+        const result4 = new Box1("함수9","실행");
+        const result5 = new Box2("함수10","실행");
+
+        result4.study();
+        result5.study();
+        result5.study2();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

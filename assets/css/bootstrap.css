@@ -13,7 +13,7 @@ margin-bottom: 40px;
 .sample h3 span::before{content:''; width: 15px; height: 15px; background-color: #E6A935; border-radius: 50%; position: absolute; left: 23px; top: 0;}
 .sample h3 span::after{content:''; width: 15px; height: 15px; background-color: #85C33D; border-radius: 50%; position: absolute; left: 45px; top: 0;}
 .sample .boxWrap {padding: 20px; background: #fff; overflow: hidden;}
-.sample .boxWrap > div {float: left; margin: 25px; background: #ccc; width: 170px; height: 170px; text-align:center; line-height: 170; color:#fff;}
+.sample .boxWrap > div {float: left; margin: 25px; background: #ccc; width: 170px; height: 170px; text-align:center; line-height: 170px; color:#fff;}
 /*!
  * Bootstrap v3.1.0 (http://getbootstrap.com)
  * Copyright 2011-2014 Twitter, Inc.

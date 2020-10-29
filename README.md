@@ -3,7 +3,7 @@
 <a href=https://ayou2017.github.io/dothome1/webstandard/index.html>바로가기</a>
 <br>
 <br>
-#웹표준 사이트 만들기<br>
+#반응형사이트 만들기<br>
 <a href=https://ayou2017.github.io/dothome1/responsive/index.html>바로가기</a>
 <br>
 <br>

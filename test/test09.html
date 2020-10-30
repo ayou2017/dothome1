@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test09</title>
+    <style>
+        /*여백초기화*/
+        *{margin: 0; padding: 0;}
+
+        /*레이아웃*/
+        .container {width: 1200px; margin: 0 auto;}
+        header {height: 100px; background: #c5cae9;}
+        nav {height: 300px; background: #9fa8da;}
+        section {height: 300px; width: 90%; padding: 5%; background: #5c6bc0; overflow: hidden;}
+        .art1 {height: 120px; width: 15%; margin: 2% 2%; background: #3f51b5; float: left; border-radius: 10px;}
+        .art2 {height: 120px; width: 15%; margin: 2% 2%; background: #3f51b5; float: left; border-radius: 10px;}
+        .art3 {height: 120px; width: 15%; margin: 2% 2%; background: #3f51b5; float: left; border-radius: 10px;}
+        .art4 {height: 120px; width: 15%; margin: 2% 2%; background: #3f51b5; float: left; border-radius: 10px;}
+        .art5 {height: 120px; width: 15%; margin: 2% 2%; background: #3f51b5; float: left; border-radius: 10px;}
+        .art6 {height: 120px; width: 15%; margin: 2% 2%; background: #3f51b5; float: left; border-radius: 10px;}
+        .art7 {height: 120px; width: 15%; margin: 2% 2%; background: #3f51b5; float: left; border-radius: 10px;}
+        .art8 {height: 120px; width: 15%; margin: 2% 2%; background: #3f51b5; float: left; border-radius: 10px;}
+        .art9 {height: 120px; width: 15%; margin: 2% 2%; background: #3f51b5; float: left; border-radius: 10px;}
+        .art10 {height: 120px; width: 15%; margin: 2% 2%; background: #3f51b5; float: left; border-radius: 10px;}
+        footer {height: 100px; background: #303f9f;}
+
+        /*화면 1210px*/
+        @media (max-width: 1210px){
+            .container {width: 100%;}
+            .art1 {width: 20%; margin: 2%;}
+            .art2 {width: 20%; margin: 2%;}
+            .art3 {width: 20%; margin: 2%;}
+            .art4 {width: 20%; margin: 2%;}
+            .art5 {width: 20%; margin: 2%;}
+            .art6 {width: 20%; margin: 2%;}
+            .art7 {width: 20%; margin: 2%;}
+            .art8 {width: 20%; margin: 2%;}
+            .art9 {display: none;}
+            .art10 {display: none;}
+        }
+
+        /*화면 900px*/
+        @media (max-width: 900px){
+            section {height: 440px;}
+            .art1 {width: 25%; margin: 2% 4%;}
+            .art2 {width: 25%; margin: 2% 4%;}
+            .art3 {width: 25%; margin: 2% 4%;}
+            .art4 {width: 25%; margin: 2% 4%;}
+            .art5 {width: 25%; margin: 2% 4%;}
+            .art6 {width: 25%; margin: 2% 4%;}
+            .art7 {width: 25%; margin: 2% 4%;}
+            .art8 {width: 25%; margin: 2% 4%;}
+            .art9 {display: block; width: 25%; margin: 2% 4%;}
+        }
+
+        /*화면 480px*/
+        @media (max-width: 480px){
+            section {height: 800px;}
+            .art1 {width: 40%; margin: 5%;}
+            .art2 {width: 40%; margin: 5%;}
+            .art3 {width: 40%; margin: 5%;}
+            .art4 {width: 40%; margin: 5%;}
+            .art5 {width: 40%; margin: 5%;}
+            .art6 {width: 40%; margin: 5%;}
+            .art7 {width: 40%; margin: 5%;}
+            .art8 {width: 40%; margin: 5%;}
+            .art9 {width: 40%; margin: 5%;}
+            .art10 {display: block; width: 40%; margin: 5%;}
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="container">
+            <header></header>
+             <!--//header-->
+
+            <nav></nav>
+             <!--//nav-->
+
+            <section>
+                <article class="art1"></article>
+                <article class="art2"></article>
+                <article class="art3"></article>
+                <article class="art4"></article>
+                <article class="art5"></article>
+                <article class="art6"></article>
+                <article class="art7"></article>
+                <article class="art8"></article>
+                <article class="art9"></article>
+                <article class="art10"></article>
+            </section>
+             <!--//section-->
+
+            <footer></footer>
+             <!--//container-->
+
+        </div>
+        <!--//container-->
+
+    </div>
+    <!--//wrap-->
+    
+</body>
+</html>

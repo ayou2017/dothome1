@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test10</title>
+    <style>
+        /*여백초기화*/
+        *{margin: 0; padding: 0;}
+
+        /*레이아웃*/
+        .container {width: 1200px; margin: 0 auto; overflow: hidden;}
+        header {height: 100px; background:#e0f2f1;}
+        nav {height: 200px; background: #b2dfdb;}
+        aside {height: 400px; width: 30%; background: #80cbc4; float: left;}
+        .cont1 {height: 200px; width: 64%; background: #4db6ac; padding: 0 3%; float: left;}
+        .cont1-art1 {height: 150px; width: 40%; background: #009688; margin: 4% 5%; float: left; border-radius: 10px;}
+        .cont1-art2 {height: 150px; width: 40%; background :#009688; margin: 4% 5%; float: left; border-radius: 10px;}
+        .cont2 {height: 200px; width: 70%; background: #26a69a; float: left;}
+        .cont3 {}
+        .cont3-art1 {height: 250px; width: 33.3333%; background: #009688; float: left;}
+        .cont3-art2 {height: 250px; width: 33.3333%; background: #00897b; float: left;}
+        .cont3-art3 {height: 250px; width: 33.3333%; background: #00796b; float: left;}
+        .cont4 {height: 250px; width: 100%; background: #00695c; float: left;}
+        .cont4-art1 {height: 200px; width: 20%; margin: 2% 2.5%; background: #009688; float: left; border-radius: 10px;}
+        .cont4-art2 {height: 200px; width: 20%; margin: 2% 2.5%; background: #009688; float: left; border-radius: 10px;}
+        .cont4-art3 {height: 200px; width: 20%; margin: 2% 2.5%; background: #009688; float: left; border-radius: 10px;}
+        .cont4-art4 {height: 200px; width: 20%; margin: 2% 2.5%; background: #009688; float: left; border-radius: 10px;}
+        footer {height: 100px; width: 100%; background: #004d40; float: left;}
+
+        /*화면 1210px*/
+        @media (max-width: 1210px){
+            .container {width: 100%;}
+            .cont1-art1 {width: 90%;}
+            .cont1-art2 {display: none;}
+            .cont3-art1 {width: 50%;}
+            .cont3-art2 {width: 50%;}
+            .cont3-art3 {display: none;}
+            .cont4-art1 {width: 28%; margin: 2% 2.5%;}
+            .cont4-art2 {width: 28%; margin: 2% 2.5%;}
+            .cont4-art3 {width: 28%; margin: 2% 2.5%;}
+            .cont4-art4 {display: none;}
+        }
+
+        /*화면 900px*/
+        @media (max-width: 900px){
+            .cont1-art1 {display: none;}
+            .cont3-art1 {width: 100%;}
+            .cont3-art2 {width: 100%;}
+            .cont4-art1 {width: 25%; margin: 3% 4%;}
+            .cont4-art2 {width: 25%; margin: 3% 4%;}
+            .cont4-art3 {width: 25%; margin: 3% 4%;}
+
+        }
+
+        /*화면 480px*/
+        @media (max-width: 480px){
+            aside {width: 100%;}
+            .cont1 {width: 100%;}
+            .cont2 {width: 100%;}
+            .cont4 {height: 750px; padding: 10% 0;}
+            .cont4-art1 {width: 75%; margin: 5% 10%;}
+            .cont4-art2 {width: 75%; margin: 5% 10%;}
+            .cont4-art3 {width: 75%; margin: 5% 10%;}
+
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="container">
+            <header></header>
+            <!--//header-->
+            <nav></nav>
+            <!--//nav-->
+            <aside></aside>
+            <!--//aside-->
+            <section class="cont1">
+                <article class="cont1-art1"></article>
+                <article class="cont1-art2"></article>
+            </section>
+            <!--//cont1-->
+            <section class="cont2"></section>
+            <!--//cont2-->
+            <section class="cont3">
+                <article class="cont3-art1"></article>
+                <article class="cont3-art2"></article>
+                <article class="cont3-art3"></article>
+            </section>
+            <!--//cont3-->
+            <section class="cont4">
+                <article class="cont4-art1"></article>
+                <article class="cont4-art2"></article>
+                <article class="cont4-art3"></article>
+                <article class="cont4-art4"></article>
+            </section>
+            <!--//cont4-->
+            <footer></footer>
+            <!--//footer-->
+        </div>
+        <!--//container-->
+    </div>
+    <!--//wrap-->
+    
+</body>
+</html>

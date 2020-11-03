@@ -1,12 +1,14 @@
 
 /*레이아웃*/
 #header {height: 327px; background: url(../img/header_bg.jpg) repeat-x center top;}
+#nav {background-color: #f6fdff;}
+#article {background-color: #eaf7fd;}
 
 /* 컨테이너 */
-.container {width: 1200px; margin: 0 auto; background: rgba(0,0,0,0.3);}
+.container {width: 1200px; margin: 0 auto; /*background: rgba(0,0,0,0.3);*/}
+
 
 /* 헤더 */
-.header {}
 .header_menu {text-align: right;}
 .header_menu a {color: #fff; transform: color 0.03s; padding: 8px 0 6px 10px; display: inline-block; font-family: 'Abel', sans-serif;}
 .header_menu a:hover {color:#ccc;}
@@ -32,6 +34,33 @@
     content: ''; border-top: 5px solid #3192bf; border-left: 5px solid transparent; border-right: 5px solid transparent; position: absolute; left: 50%; bottom: -5px; margin-left: -5px;
 }
 .header .header_icon li a:hover {box-shadow: 0 0 0 3px rgba(75,154,191,0.9) inset, 0 0 0 100px rgba(0,0,0,0.1) inset;}
+
+
+/* 전체메뉴 */
+.nav {overflow: hidden; padding: 25px 0; list-style: none;}
+.nav > div {float: left; width: 40%;}
+.nav > div:last-child {width: 20%;}
+.nav > div ol {overflow: hidden;}
+.nav > div li {float: left; width: 50%; position: relative; padding-left: 8px; box-sizing: border-box;}
+.nav > div li::before {content: ''; width: 3px; height: 3px; background-color: #25a2d0; border-radius: 50%; position: absolute; left: 0; top: 9px;}/*가상요소*/
+.nav > div:last-child li {width: 100%;}
+.nav h3 {font-size: 18px; color: #25a2d0; font-weight: bold; margin-bottom: 4px;}
+.nav > div li a {position: relative; transition: all 0.3s ease-in-out;}
+.nav > div li a::after {content: ''; width: 0; height: 1px; background: #25aad0; position: absolute; bottom: 0; left: 0; transition: all 0.3s ease-in-out;}
+.nav > div li:hover a::after {width: 100%;}
+
+/* 타이틀 */
+
+.article {position: relative;}
+.article h2 {text-align: center; font-size: 40px; padding: 5px 0; font-family: "Nanum Brush Script"; color: #2A91C1;}
+.article_icon a {background: #2A91C1; color: #fff; font-size: 35px; width: 60px; height: 60px; display: inline-block; line-height: 60px; border-radius: 50%; position: absolute; right: 0; top: 5px; transition: all 0.3s ease-out; text-align: center; }
+.article_icon a:hover {box-shadow: 0px 0px 12px 8px #1d5e7c;}
+
+
+
+
+
+
 
 /* 미디어쿼리 */
 @media (max-width:1220px){

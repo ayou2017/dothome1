@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>반응형 레이아웃 3</title>
     <style>
+    /* 여백 초기화 */
     *{margin: 0; padding: 0;}
+
+    /* 레이아웃 */
     body {background: #fff8e1;}
     .container {width: 100%; margin: 0 auto;}
     header {width: 100%; height: 100px; background-color: #b3e5fc;}
@@ -15,21 +18,21 @@
     .article3 {width: 70%; height: 300px;background-color: #0288d1; float: left;}
     footer {width: 100%; height: 100px; background-color:#0277bd; clear: both;}
 
-    /*1280*/
+    /* 1280 */
     @media (max-width: 1280px){
         .container {width: 100%;}
         .article1 {height: 450px;}
         .article2 {height: 450px;}
         .article3 {width: 100%;}
     }
-    /*900*/
+    /* 900 */
     @media (max-width: 900px){
         header {width: 100%; height: 200px;}
         aside {width: 100%; height: 200px;}
         .article1 {width: 50%; height: 450px;}
         .article2 {width: 50%; height: 450px;}
     }
-    /*480*/
+    /* 480 */
     @media (max-width: 480px){
         .article1 {width: 100%; height: 300px;}
         .article2 {width: 100%; height: 300px;}
@@ -41,14 +44,26 @@
     <div id="wrap">
         <main class="container">
             <header></header>
+            <!--//header-->
+
             <aside></aside>
+            <!--//aside-->
+
             <article>
                 <article class="article1"></article>
                 <article class="article2"></article>
                 <article class="article3"></article>
             </article>
+            <!--//article-->
+
             <footer></footer>
+            <!--//footer-->
+
         </main>
+        <!--//container-->
+
     </div>
+    <!--//wrap-->
+    
 </body>
 </html>

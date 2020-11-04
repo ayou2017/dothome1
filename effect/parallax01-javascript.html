@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parallax01 - jQuery</title>
+    <title>Parallax01 - javascript</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <style>
         /* reset */
         @font-face {
-            font-family: 'Cafe24Danjunghae';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Danjunghae.woff') format('woff');
+            font-family: 'Wemakeprice-Regular';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Wemakeprice-Regular.woff') format('woff');
             font-weight: normal;
             font-style: normal;
         }
@@ -58,9 +58,9 @@
             line-height: 1.4;
         }
         .info li a {
-            color:#fff;
+            color:#222;
             width: 25px; height: 25px;
-            border: 1px dashed #fff;
+            border: 1px dashed #222;
             display: inline-block;
             border-radius: 50%;
             text-align: center;
@@ -69,8 +69,8 @@
             margin: 3px;
         }
         .info li a.active {
-            background: #fff;
-            color: #000;
+            background: #222;
+            color: #fff;
         }
 
         @media (max-width: 800px){
@@ -82,18 +82,14 @@
             --color-h1 : #dc6e25;
             --color-title : #fff;
             --color-sub : #999;
-            --color-link : #000;
-            --color-bg : #111;
-            --font-cafe : 'Cafe24Danjunghae';
+            --color-link : #222;
+            --color-bg : #cecece;
+            --font-cafe : 'Wemakeprice-Regular';
             --font-lato : 'Lato', sans-serif;
 
             background-color: var(--color-bg);
             color: var(--color-title);
             font-family: var(--font-cafe);
-        }
-
-        #parallax-wrap {
-            overflow: hidden;
         }
 
         #parallax-wrap h1 {
@@ -212,74 +208,34 @@
             background-size: cover;
         }
 
-        
-        
-        
-        /* 한번에 나타나기 */
-        /*.contents > section {
-            opacity: 0;
-            transform: translateY(200px);
-            transition: all 1s;
-        }
-        .contents > section.show {
-            opacity: 1;
-            transform: translateY(0);
-        }*/
 
-        /* 개별적으로 나타나기 */
-        .contents > section .content-item-num {
-            opacity: 0;
-            transform: translateY(200px);
-            transition: all 1s 0.1s cubic-bezier(0.13, 0.52, 0.58, 1);
-        }
-        .contents > section .content-item-title {
-            opacity: 0;
-            transform: translateX(200px);
-            transition: all 1s 0.3s cubic-bezier(0.13, 0.52, 0.58, 1);
-        }
-        .contents > section .content-item-imgWrap {
-            opacity: 0;
-            transform: translateY(200px);
-            transition: all 1s 0.6s cubic-bezier(0.13, 0.52, 0.58, 1);
-        }
-        .contents > section .content-item-desc {
-            opacity: 0;
-            transform: translateX(200px);
-            transition: all 1s 0.9s cubic-bezier(0.13, 0.52, 0.58, 1);
-        }
-        
 
-        .contents > section.show .content-item-num {
-            opacity: 0.7;
-            transform: translateY(0);
+         /* 한번에 나타나기 */
+        /* .contents > section {opacity: 0; transition: all 1s; transform: translateX(200px);}
+        .contents > section.show {opacity: 1; transform: translateX(0);} */
 
-        }
-        .contents > section.show .content-item-title {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        .contents > section.show .content-item-imgWrap {
-            opacity: 1;
-            transform: translateY(0);
-            
-        }
-        .contents > section.show .content-item-desc {
-            opacity: 1;
-            transform: translateX(0);
-        }
+        /* 개별적으로 나타내기 */
+        /*.contents > section .content-item-num {opacity: 0; transform: translateY(200px); transition: all 0.5s 0.1s cubic-bezier(0, 0.61, 0.53, 1.04);}
+        .contents > section .content-item-title {opacity: 0; transform: translateX(-200px); transition: all 0.5s 0.3s cubic-bezier(0, 0.61, 0.53, 1.04);}
+        .contents > section .content-item-imgWrap {opacity: 0; transform: translateY(200px); transition: all 0.5s 0.6s cubic-bezier(0, 0.61, 0.53, 1.04);}
+        .contents > section .content-item-desc {opacity: 0; transform: translateX(-200px); transition: all 10.5s 0.9s cubic-bezier(0, 0.61, 0.53, 1.04);}
 
+        .contents > section.show .content-item-num {opacity: 0.7; transform: translateY(0);}
+        .contents > section.show .content-item-title {opacity: 1; transform: translateX(0);}
+        .contents > section.show .content-item-imgWrap {opacity: 1; transform: translateY(0);}
+        .contents > section.show .content-item-desc {opacity: 1; transform: translateX(0);}*/
     </style>
 </head>
 <body>
 
     <!-- info -->
     <div class="info left">
-        <h1>Parallax Effect01 - jQuery</h1>
+        <h1>Parallax Effect01 - Javescript</h1>
         <p>패랠랙스 스크로링 효과 - 기본</p>
     </div>
     <div class="info right">
         <ul>
-            <li><a href="parallax01-jquery.html" class="active">1</a><a href="parallax01-javascript.html">1</a></li>
+            <li><a href="parallax01-jquery.html">1</a><a href="parallax01-javascript.html" class="active">1</a></li>
             <li><a href="parallax02-jquery.html">2</a><a href="parallax02-javascript.html">2</a></li>
             <li><a href="parallax03-jquery.html">3</a><a href="parallax03-javascript.html">3</a></li>
             <li><a href="parallax04-jquery.html">4</a><a href="parallax04-javascript.html">4</a></li>
@@ -288,13 +244,12 @@
             <li><a href="parallax07-jquery.html">7</a><a href="parallax07-javascript.html">7</a></li>
             <li><a href="parallax08-jquery.html">8</a><a href="parallax08-javascript.html">8</a></li>
             <li><a href="parallax09-jquery.html">9</a><a href="parallax09-javascript.html">9</a></li>
-            <li><a href="parallax10-jquery.html">10</a><a href="parallax10-javascript.html">10</a></li>
         </ul>
     </div>
 
     <div class="info bottom">
         <ul>
-            <li>scrollTop() : <span class="scrollTop">0</span>px</li>
+            <li>scrollTop() : <span class="pageYOffset">0</span>px</li>
             <li>#section1 : <span class="s1OffsetTop">0</span>px</li>
             <li>#section2 : <span class="s2OffsetTop">0</span>px</li>
             <li>#section3 : <span class="s3OffsetTop">0</span>px</li>
@@ -320,7 +275,7 @@
                     <figure class="content-item-imgWrap">
                         <div class="content-item-img"></div>
                     </figure>
-                    <p class="content-item-desc">기운과 끈기는 모든 것을 이겨낸다.</p>
+                    <p class="content-item-desc">높은 목표를 세우고, 스스로 채직찔 한다.</p>
                 </section>
                 <section id="section2" class="content-item">
                     <span class="content-item-num">02</span>
@@ -328,7 +283,7 @@
                     <figure class="content-item-imgWrap">
                         <div class="content-item-img"></div>
                     </figure>
-                    <p class="content-item-desc">무엇보다도, 준비가 성공의 열쇠이다</p>
+                    <p class="content-item-desc">결과도 중요하지만, 과정을 더 중요하게 생각한다.</p>
                 </section>
                 <section id="section3" class="content-item">
                     <span class="content-item-num">03</span>
@@ -336,7 +291,7 @@
                     <figure class="content-item-imgWrap">
                         <div class="content-item-img"></div>
                     </figure>
-                    <p class="content-item-desc">우리가 실패에서 배우면, 실패는 성공이 된다.</p>
+                    <p class="content-item-desc">매 순간에 최선을 다하고, 끊임없이 변화한다.</p>
                 </section>
                 <section id="section4" class="content-item">
                     <span class="content-item-num">04</span>
@@ -344,7 +299,7 @@
                     <figure class="content-item-imgWrap">
                         <div class="content-item-img"></div>
                     </figure>
-                    <p class="content-item-desc">무언가 자꾸 반복하다 보면 우리 자신이 그것이 됩니다.</p>
+                    <p class="content-item-desc">모든지 기본을 중요하게 생각한다.</p>
                 </section>
                 <section id="section5" class="content-item">
                     <span class="content-item-num">05</span>
@@ -352,7 +307,7 @@
                     <figure class="content-item-imgWrap">
                         <div class="content-item-img"></div>
                     </figure>
-                    <p class="content-item-desc">모든 진보는 익숙한 영역이 아닌 곳에서 이뤄진다.</p>
+                    <p class="content-item-desc">천 마디 말보다 하나의 행동이 더 값지다.</p>
                 </section>
                 <section id="section6" class="content-item">
                     <span class="content-item-num">06</span>
@@ -360,7 +315,7 @@
                     <figure class="content-item-imgWrap">
                         <div class="content-item-img"></div>
                     </figure>
-                    <p class="content-item-desc">성공은 매일 반복한 작은 노력들의 합이다.</p>
+                    <p class="content-item-desc">조그만 성공에 만족하지 않으며, 방심을 경계한다.</p>
                 </section>
                 <section id="section7" class="content-item">
                     <span class="content-item-num">07</span>
@@ -368,7 +323,7 @@
                     <figure class="content-item-imgWrap">
                         <div class="content-item-img"></div>
                     </figure>
-                    <p class="content-item-desc">모방해서 성공하는 것보다 독창적으로 실패하는 게 더 낫다.</p>
+                    <p class="content-item-desc">내 스타일을 다른 사람에게 강요하지 않는다.</p>
                 </section>
                 <section id="section8" class="content-item">
                     <span class="content-item-num">08</span>
@@ -376,7 +331,7 @@
                     <figure class="content-item-imgWrap">
                         <div class="content-item-img"></div>
                     </figure>
-                    <p class="content-item-desc">게으른 예술가가 만든 명작은 없다.</p>
+                    <p class="content-item-desc">자신의 이익을 위해 다른 사람을 이용하지 않는다.</p>
                 </section>
                 <section id="section9" class="content-item">
                     <span class="content-item-num">09</span>
@@ -384,7 +339,7 @@
                     <figure class="content-item-imgWrap">
                         <div class="content-item-img"></div>
                     </figure>
-                    <p class="content-item-desc">운은 용기를 내는 사람의 편이다.</p>
+                    <p class="content-item-desc">나보다 다른 사람의 의견도 존중한다.</p>
                 </section>
             </div>
         </section>
@@ -393,178 +348,71 @@
 
 
     <!-- script -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
-        /*
-        $(window).scroll(function(){
-            const scrollTop = $(window).scrollTop() + $(window).height/2;
-            //const썼는데 에러나면 let쓰면됨
-            
+         window.addEventListener("scroll", function(){
+            let pageYOffset = window.pageYOffset;
+
+            /*console.log(pageYOffset);*/
+
             //출력용
-            $(".scrollTop").text(parseInt(scrollTop));
-            $(".s1OffsetTop").text( parseInt($("#section1").offset().top));
-            $(".s2OffsetTop").text( parseInt($("#section2").offset().top));
-            $(".s3OffsetTop").text( parseInt($("#section3").offset().top));
-            $(".s4OffsetTop").text( parseInt($("#section4").offset().top));
-            $(".s5OffsetTop").text( parseInt($("#section5").offset().top));
-            $(".s6OffsetTop").text( parseInt($("#section6").offset().top));
-            $(".s7OffsetTop").text( parseInt($("#section7").offset().top));
-            $(".s8OffsetTop").text( parseInt($("#section8").offset().top));
-            $(".s9OffsetTop").text( parseInt($("#section9").offset().top));
-        
-            //출력용 글씨 색
-            if( scrollTop > $("#section1").offset().top){
-                $(".s1OffsetTop").css("color","red");
-            } else {
-                $(".s1OffsetTop").css("color","white");
-            }
-            if( scrollTop > $("#section2").offset().top){
-                $(".s2OffsetTop").css("color","red");
-            } else {
-                $(".s2OffsetTop").css("color","white");
-            }
-            if( scrollTop > $("#section3").offset().top){
-                $(".s3OffsetTop").css("color","red");
-            } else {
-                $(".s3OffsetTop").css("color","white");
-            }
-            if( scrollTop > $("#section4").offset().top){
-                $(".s4OffsetTop").css("color","red");
-            } else {
-                $(".s4OffsetTop").css("color","white");
-            }
-            if( scrollTop > $("#section5").offset().top){
-                $(".s5OffsetTop").css("color","red");
-            } else {
-                $(".s5OffsetTop").css("color","white");
-            }
-            if( scrollTop > $("#section6").offset().top){
-                $(".s6OffsetTop").css("color","red");
-            } else {
-                $(".s6OffsetTop").css("color","white");
-            }
-            if( scrollTop > $("#section7").offset().top){
-                $(".s7OffsetTop").css("color","red");
-            } else {
-                $(".s7OffsetTop").css("color","white");
-            }
-            if( scrollTop > $("#section8").offset().top){
-                $(".s8OffsetTop").css("color","red");
-            } else {
-                $(".s8OffsetTop").css("color","white");
-            }
-            if( scrollTop > $("#section9").offset().top){
-                $(".s9OffsetTop").css("color","red");
-            } else {
-                $(".s9OffsetTop").css("color","white");
-            }
+            document.querySelector(".pageYOffset").innerText = parseInt(pageYOffset);
+            document.querySelector(".s1OffsetTop").innerText = document.getElementById("section1").offsetTop;
+            document.querySelector(".s2OffsetTop").innerText = document.getElementById("section2").offsetTop;
+            document.querySelector(".s3OffsetTop").innerText = document.getElementById("section3").offsetTop;
+            document.querySelector(".s4OffsetTop").innerText = document.getElementById("section4").offsetTop;
+            document.querySelector(".s5OffsetTop").innerText = document.getElementById("section5").offsetTop;
+            document.querySelector(".s6OffsetTop").innerText = document.getElementById("section6").offsetTop;
+            document.querySelector(".s7OffsetTop").innerText = document.getElementById("section7").offsetTop;
+            document.querySelector(".s8OffsetTop").innerText = document.getElementById("section8").offsetTop;
+            document.querySelector(".s9OffsetTop").innerText = document.getElementById("section9").offsetTop;
 
-            //나타나기
-            if(scrollTop > $("#section1").offset().top){
-                $("#section1").addClass("show");
+            //출력용 글씨색
+            if(pageYOffset >document.getElementById("section1").offsetTop){
+                document.querySelector(".s1OffsetTop").style.color = "red";
             } else {
-                $("#section1").removeClass("show");
+                document.querySelector(".s1OffsetTop").style.color = "white";
             }
-            if(scrollTop > $("#section2").offset().top){
-                $("#section2").addClass("show");
+            if(pageYOffset >document.getElementById("section2").offsetTop){
+                document.querySelector(".s2OffsetTop").style.color = "red";
             } else {
-                $("#section2").removeClass("show");
+                document.querySelector(".s2OffsetTop").style.color = "white";
             }
-            if(scrollTop > $("#section3").offset().top){
-                $("#section3").addClass("show");
+            if(pageYOffset >document.getElementById("section3").offsetTop){
+                document.querySelector(".s3OffsetTop").style.color = "red";
             } else {
-                $("#section3").removeClass("show");
+                document.querySelector(".s3OffsetTop").style.color = "white";
             }
-            if(scrollTop > $("#section3").offset().top){
-                $("#section3").addClass("show");
+            if(pageYOffset >document.getElementById("section4").offsetTop){
+                document.querySelector(".s4OffsetTop").style.color = "red";
             } else {
-                $("#section3").removeClass("show");
+                document.querySelector(".s4OffsetTop").style.color = "white";
             }
-            if(scrollTop > $("#section4").offset().top){
-                $("#section4").addClass("show");
+            if(pageYOffset >document.getElementById("section5").offsetTop){
+                document.querySelector(".s5OffsetTop").style.color = "red";
             } else {
-                $("#section4").removeClass("show");
+                document.querySelector(".s5OffsetTop").style.color = "white";
             }
-            if(scrollTop > $("#section5").offset().top){
-                $("#section5").addClass("show");
+            if(pageYOffset >document.getElementById("section6").offsetTop){
+                document.querySelector(".s6OffsetTop").style.color = "red";
             } else {
-                $("#section5").removeClass("show");
+                document.querySelector(".s6OffsetTop").style.color = "white";
             }
-            if(scrollTop > $("#section6").offset().top){
-                $("#section6").addClass("show");
+            if(pageYOffset >document.getElementById("section7").offsetTop){
+                document.querySelector(".s7OffsetTop").style.color = "red";
             } else {
-                $("#section6").removeClass("show");
+                document.querySelector(".s7OffsetTop").style.color = "white";
             }
-            if(scrollTop > $("#section7").offset().top){
-                $("#section7").addClass("show");
+            if(pageYOffset >document.getElementById("section8").offsetTop){
+                document.querySelector(".s8OffsetTop").style.color = "red";
             } else {
-                $("#section7").removeClass("show");
+                document.querySelector(".s8OffsetTop").style.color = "white";
             }
-            if(scrollTop > $("#section8").offset().top){
-                $("#section8").addClass("show");
+            if(pageYOffset >document.getElementById("section9").offsetTop){
+                document.querySelector(".s9OffsetTop").style.color = "red";
             } else {
-                $("#section8").removeClass("show");
+                document.querySelector(".s9OffsetTop").style.color = "white";
             }
-            if(scrollTop > $("#section9").offset().top){
-                $("#section9").addClass("show");
-            } else {
-                $("#section9").removeClass("show");
-            }
-
-        });
-        */
-        //for문
-        /*$(window).scroll(function(){
-            const scrollTop = $(window).scrollTop() + $(window).height/2;//먼저나오게
-            $(".scrollTop").text(parseInt(scrollTop));
-            for(i=1; i<(".content-item").length; i++){
-                $(".s"+i+"OffsetTop").text( parseInt($("#section"+i).offset().top) );
-                if( scrollTop >$("#section"+i).offset().top){
-                    $(".s"+i+"OffsetTop").css("color","red");
-                    $("#section"+i).addClass("show");
-                } else {
-                    $(".s"+i+"OffsetTop").css("color","white");
-                    $("#section"+i).removeClass("show");
-                }
-            }
-        });
-        //for문 - 옛날방법
-        /*$(window).scroll(function(){
-            const scrollTop = $(window).scrollTop() + $(window).height/2;//먼저나오게
-            $(".scrollTop").text(parseInt(scrollTop));
-            for(i=1; i<(".content-item").length; i++){
-                //출력용과 나타나기를 하나로 줄일수 있음
-                //출력용
-                $(".s"+i+"OffsetTop").text( parseInt($("#section"+i).offset().top) );
-                if( scrollTop >$("#section"+i).offset().top){
-                    $(".s"+i+"OffsetTop").css("color","red");
-                } else {
-                    $(".s"+i+"OffsetTop").css("color","white");
-                }
-                //나타나기
-                if(scrollTop > $("#section"+i).offset().top){
-                    $("#section"+i).addClass("show");
-                } else {
-                    $("#section"+i).removeClass("show");
-                }
-            }
-        });*/
-        //each문 -표준
-        $(window).scroll(function(){
-            const scrollTop = $(window).scrollTop() + $(window).height()/2;
-            $(".scrollTop").text(parseInt(scrollTop));
-            $(".content-item").each(function(num){//i자리에 num을 넣어도 됨,
-                //console.log(num+1)로 작동되는지 확인
-                $(".s"+(num+1)+"OffsetTop").text( parseInt($("#section"+(num+1)).offset().top) );
-                if( scrollTop >$(this).offset().top){
-                    $(".s"+(num+1)+"OffsetTop").css("color","red");
-                    $(this).addClass("show");
-                } else {
-                    $(".s"+(num+1)+"OffsetTop").css("color","white");
-                    $(this).removeClass("show");
-                }
-            })            
-        });
+         });
     </script>
 </body>
 </html>

@@ -112,9 +112,9 @@ body {background: url(../img/header_bg.jpg) repeat-x center top;}
 .slider .slick-active figcaption em {opacity: 1; transition: all .84s ease; transform: translateX(50px);}
 .slider .slick-active figcaption span  {opacity: 1; transition: all .84s .2s ease; transform: translateX(50px);}
 .slider .slick-prev {position: absolute; left: 0; bottom: 0; width: 30px; height: 30px; display: inline-block; text-indent: -9999px; border-width: 2px; border-color: #5dbfed;}
-.slider .slick-prev::before {content: '<';  color:#5dbfed; width: 20px; height: 20px; position: absolute; left: 0; top: 3; text-indent: 0;}
+.slider .slick-prev::before {content: '<';  color:#5dbfed; width: 20px; height: 20px; position: absolute; left: 0; top: 3px; text-indent: 0;}
 .slider .slick-next {position: absolute; right: 0; bottom: 0; width: 30px; height: 30px; display: inline-block; text-indent: -9999px; border-width: 2px; border-color: #5dbfed;}
-.slider .slick-next::before {content: '>';  color:#5dbfed; width: 20px; height: 20px;  position: absolute; left: 0; top: 3; text-indent: 0;}
+.slider .slick-next::before {content: '>';  color:#5dbfed; width: 20px; height: 20px;  position: absolute; left: 0; top: 3px; text-indent: 0;}
 .slider .slick-dots {width: 100%; text-align: center;}
 .slider .slick-dots li {display: inline-block; width: 15px; height: 15px; margin: 5px;}
 .slider .slick-dots li button {width: 15px; height: 15px; background: #5dbfeb; border-radius: 50%; text-indent: -9999px; border-width: 0;}

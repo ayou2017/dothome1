@@ -76,7 +76,7 @@
     </div>
     <div class="container bs-docs-container">
         <div class="row">
-            <div class="col-md-9" role="main">
+            <div class="col-md-12" role="main">
                 <!--배너 광고-->
                 <div class="ad">
                     <script src="https://ads-partners.coupang.com/g.js"></script>
@@ -109,7 +109,15 @@
                                 <td>일반적인 유형의 애니메이션의방향을 반대로 정의합니다.</td>
                             </tr>
                             <tr>
+                                <td>gasp.Tofrom</td>
                                 <td></td>
+                            </tr>
+                            <tr>
+                                <td>gasp.set()</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>gasp.Timeline()</td>
                                 <td></td>
                             </tr>
                             <tr>
@@ -369,6 +377,7 @@ function out(){
 </code></pre>
                 </div>
                 <!-- //Intro8 -->
+                
             </div>
             <!-- //col-md-12 -->
         </div>
@@ -376,21 +385,6 @@ function out(){
     </div>
     <!-- //container -->
             
-            </div>
-            <!-- //col-md-9 -->
-            <!-- //col-md-3 -->
-            <div class="col-md-3">
-                <div class="bs-sidebar hidden-print" role="complementary">
-                    <ul class="nav bs-sidenav">
-                        <li><a href="#intro1">레이어 마스크</a></li>
-                    </ul>
-                </div>
-            </div>
-            <!--//col-md-3 -->
-        </div>
-        <!-- //row -->
-    </div>
-    <!-- //container -->
     <!-- Footer -->
     <footer class="bs-footer" role="contentinfo">
         <div class="container">
@@ -431,7 +425,7 @@ function out(){
             gsap.to(".animation01", {x: leftWidth, rotation: 360, borderRadius: 5, duration: 2, scale: 2});
         });
         $(".btn1-4").click(function(){
-            var tl = gsap.timeline();
+            var tl = gsap.timeline({repeat: -1});
             tl.to(".animation01", {x: leftWidth, duration: 1})
               .to(".animation01", {y: leftHeight, duration: 1})
               .to(".animation01", {x: 0, duration: 1})

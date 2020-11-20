@@ -377,6 +377,61 @@ function out(){
 </code></pre>
                 </div>
                 <!-- //Intro8 -->
+                <!-- Intro8 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro8" class="page-header">
+                        Animation08 - 콜백 함수
+                        <button type="button" class="btn btn btn-default">Start</button>
+                    </h2>
+                    <div class="sample">
+                        <h3><span></span><em class="sr-only">animation</em></h3>
+                        <div class="timing bg8">
+                            <div class="animation11"><span>11</span></div>
+                        </div>
+                    </div>
+<pre class="line-numbers language-js"><code>$("#intro8 > button").click(function(){
+    $(".animation11")
+        .animate({left: leftWidth}, 500, "easeOutQuint")
+        .animate({top: leftHeight}, 500, "easeOutQuint")
+        .animate({left: "0%"}, 500,  "easeOutQuint")
+        .animate({top: "0%"}, 500, "easeOutQuint", function(){
+            $(".animation11")
+            alert("도착");
+        });
+});
+</code></pre>
+                </div>
+                <!-- //Intro8 -->
+
+                <!-- Sample01 -->
+                <div class="bs-docs-section">
+                    <h2 id="sample01" class="page-header">GSAP Animation Sample01</h2>
+                    <p class="bs-callout bs-callout-info"></p>
+                    <div class="codepen"></div>
+                        <p class="codepen" data-height="600" data-theme-id="light" data-default-tab="result" data-user="you_09" data-slug-hash="PozvqQW" style="height: 600px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="GSAP Animation Sample01">
+                            <span>See the Pen <a href="https://codepen.io/you_09/pen/PozvqQW">
+                            GSAP Animation Sample01</a> by young (<a href="https://codepen.io/you_09">@you_09</a>)
+                            on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>
+                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                    </div>
+                </div>
+                <!-- //Sample01 -->
+                <!-- Sample02 -->
+                <div class="bs-docs-section">
+                    <h2 id="sample02" class="page-header">GSAP Animation Sample02</h2>
+                    <p class="bs-callout bs-callout-info"></p>
+                    <div class="codepen">
+                        <p class="codepen" data-height="600" data-theme-id="light" data-default-tab="result" data-user="you_09" data-slug-hash="QWERjVP" style="height: 600px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="GSAP Animation Sample02">
+                            <span>See the Pen <a href="https://codepen.io/you_09/pen/QWERjVP">
+                            GSAP Animation Sample02</a> by young (<a href="https://codepen.io/you_09">@you_09</a>)
+                            on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>
+                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                    </div>
+                </div>
+                <!-- //Sample02 -->
+                
                 
             </div>
             <!-- //col-md-12 -->

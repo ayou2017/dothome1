@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parallax02 - jQuery</title>
+    <title>Parallax05 - jQuery</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <style>
         /* reset */
@@ -67,7 +67,7 @@
             color: var(--color-title);
             font-family: var(--font-im);
             font-size: 16px;
-            background: url(img/images04@2.jpg) no-repeat center center;
+            background: url(img/images01@2.jpg) no-repeat center center;
             background-size: cover;
             height: 100vh;
         }
@@ -93,35 +93,47 @@
         }
         .slider-img {
             overflow: hidden;
-            width: 4000px; height: 480px;
             position: relative;
         }
         .slider-img .slider {
+            float: left;
             width: 800px; 
             height: 480px;
-            float: left;
             position: relative;
         }
         .slider-img .slider span {
             position: absolute;
             left: 5px; top: 5px;
         }
+        .slider-btn a {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            padding: 20px;
+            background: rgba(0,0,0,0.5);
+            text-transform: capitalize;
+            color: var(--color-title);
+            font-family: var(--font-im);
+        }
+        .slider-btn a.prev {left: 0;}
+        .slider-btn a.next {right: 0;}
     </style>
 </head>
 <body>
 
     <!-- info -->
     <div class="info left">
-        <h1>Slider Effect02 - jQuery</h1>
-        <p>이미지 슬라이드 -가로로 이동하기</p>
+        <h1>Slider Effect05 - jQuery</h1>
+        <p>이미지 슬라이드 - 버튼만들기</p>
     </div>
     <div class="info right">
         <ul>
             <li><a href="sliderEffect01-jquery.html">1</a><a href="sliderEffect01-javascript.html">1</a></li>
-            <li><a href="sliderEffect02-jquery.html" class="active">2</a><a href="sliderEffect02-javascript.html">2</a></li>
+            <li><a href="sliderEffect02-jquery.html">2</a><a href="sliderEffect02-javascript.html">2</a></li>
             <li><a href="sliderEffect03-jquery.html">3</a><a href="sliderEffect03-javascript.html">3</a></li>
             <li><a href="sliderEffect04-jquery.html">4</a><a href="sliderEffect04-javascript.html">4</a></li>
-            <li><a href="sliderEffect05-jquery.html">5</a><a href="sliderEffect05-javascript.html">5</a></li>
+            <li><a href="sliderEffect05-jquery.html" class="active">5</a><a href="sliderEffect05-javascript.html">5</a></li>
             <li><a href="sliderEffect06-jquery.html">6</a><a href="sliderEffect06-javascript.html">6</a></li>
             <li><a href="sliderEffect07-jquery.html">7</a><a href="sliderEffect07-javascript.html">7</a></li>
             <li><a href="sliderEffect08-jquery.html">8</a><a href="sliderEffect08-javascript.html">8</a></li>
@@ -134,11 +146,15 @@
     <main>
         <div class="slider-wrap">
             <div class="slider-img">
-                <div class="slider"><img src="img/images05.jpg" alt="이미지1"><span>이미지1</span></div>
-                <div class="slider"><img src="img/images06.jpg" alt="이미지2"><span>이미지2</span></div>
-                <div class="slider"><img src="img/images07.jpg" alt="이미지3"><span>이미지3</span></div>
-                <div class="slider"><img src="img/images08.jpg" alt="이미지4"><span>이미지4</span></div>
-                <div class="slider"><img src="img/images09.jpg" alt="이미지5"><span>이미지5</span></div>
+                <div class="slider s1"><img src="img/images10.jpg" alt="이미지1"><span>이미지1</span></div>
+                <div class="slider s2"><img src="img/images11.jpg" alt="이미지2"><span>이미지2</span></div>
+                <div class="slider s3"><img src="img/images12.jpg" alt="이미지3"><span>이미지3</span></div>
+                <div class="slider s4"><img src="img/images13.jpg" alt="이미지4"><span>이미지4</span></div>
+                <div class="slider s5"><img src="img/images14.jpg" alt="이미지5"><span>이미지5</span></div>
+            </div>
+            <div class="slider-btn">
+                <a href="#" class="prev">prev</a>
+                <a href="#" class="next">next</a>
             </div>
         </div>  
     </main>
@@ -152,32 +168,45 @@
         const sliderWrap = $(".slider-wrap");
         const sliderImg = $(".slider-img");
         const slider = $(".slider");
+        const sliderBtn = $(".slider-btn");
 
         let currentIndex = 0;
-        let sliderCount = slider.length;     //이미지개수
+        let sliderCount = slider.length;
+        let sliderWidth = slider.width();
+        let sliderHeight = slider.height();
+        let sliderTotalWidth = sliderWidth * sliderCount
 
-        /*3초에 한번씩 실행*/
-        setInterval(function(){
-            /*if(currentIndex < sliderCount - 1){
-                currentIndex++; //012340
-            } else {
-                currentIndex = 0;
-            }*/
-            //if문 한줄로
-            currentIndex < sliderCount - 1 ? currentIndex++ : currentIndex = 0;     //삼항연산자로 한줄에 표현가능
-            //console.log(currentIndex);
-            let sliderPosition = currentIndex * (-800) + "px";
-                                // 0*-800px=0
-                                // 1*-800px=-800px
-                                // 2*-800px=-1600px(3번째)
-                                // 3*-800px=-2400px(4번째)    
+        sliderImg.css ({width: sliderTotalWidth, height: sliderHeight, marginLeft: -sliderWidth});
+        $(".slider:last-child").prependTo(sliderImg); 
+        //왼쪽에 여백 미리 만들어놓기=> marginLeft: -sliderWidth
 
-            sliderImg.animate({left: sliderPosition}, 400);
-            //currentIndex++;
+        /*function moveLeft(){
+            sliderImg.animate({ left: + sliderWidth}, 400, function(){
+                //콜백함수전에, 버튼을 누르기전에 작동해야함
+                $(".slider:last-child").prependTo(sliderImg);   
+                sliderImg.css("left", "");         
+            });
+        }*/
 
-            // console.log("currentIndex :" + currentIndex)
-            // console.log("sliderPosition :" + sliderPosition)
-        }, 3000);
+        function moveLeft(){
+            sliderImg.animate({ left: + sliderWidth}, 400, function(){
+                $(".slider:last-child").prependTo(sliderImg); 
+                sliderImg.css("left", "");         
+            });
+        }
+        function moveRight(){
+            sliderImg.animate({ left: - sliderWidth}, 400, function(){
+                $(".slider:first-child").appendTo(sliderImg);
+                sliderImg.css("left","")
+            });
+        }
+
+        sliderBtn.find(".prev").click(function(){
+            moveLeft();
+        });
+        sliderBtn.find(".next").click(function(){
+            moveRight();
+        });
 
     </script>
 </body>

@@ -323,10 +323,10 @@
     <!-- script -->
    
     <script>
-        window.addEventListener("scroll", ()=> {
-            let pageYoffset = window.pageXOffset || document.documentElement.scrollTop/*최신소스||옛날버전-호환성맞춤   타임스크립트?*/
+        window.addEventListener("scroll", () => {
+            let pageYoffset = (window.pageXOffset || document.documentElement.scrollTop)/*최신소스||옛날버전-호환성맞춤   타임스크립트?*/
 
-            let offset1 = (pageYoffset - document.getElementById("section1").offsetTop) * 0.2;
+            /* let offset1 = (pageYoffset - document.getElementById("section1").offsetTop) * 0.2;
             let offset2 = (pageYoffset - document.getElementById("section2").offsetTop) * 0.2;
             let offset3 = (pageYoffset - document.getElementById("section3").offsetTop) * 0.2;
             let offset4 = (pageYoffset - document.getElementById("section4").offsetTop) * 0.2;
@@ -344,19 +344,19 @@
             document.querySelector("#section6 .content-item-desc").style.transform = "translateY("+ -offset6 +"px)";
             document.querySelector("#section7 .content-item-desc").style.transform = "translateY("+ -offset7 +"px)";
             document.querySelector("#section8 .content-item-desc").style.transform = "translateY("+ -offset8 +"px)";
-            document.querySelector("#section9 .content-item-desc").style.transform = "translateY("+ -offset9 +"px)";
+            document.querySelector("#section9 .content-item-desc").style.transform = "translateY("+ -offset9 +"px)"; */
 
 
             //for문
-            for(let i=1; i>=9; i++){
+            /* for(let i=1; i>=9; i++){
                 let offset = (pageYoffset - document.getElementById("#section"+i).offsetTop) * 0.2;
                 document.querySelector("#section"+i+" .content-item-desc").style.transform = "translateY("+ -offset +"px)";
-            }
+            } */
 
-            document.querySelectorAll(".content-item-desc").forEach((elem) => {
+            document.querySelectorAll(".content-item").forEach((elem) => {
                 let target = elem.childNodes[7];
-                let offset =  (pageYoffset - elem.offsetTop) * 0.2;
-                target.style.transform = "translateY("+ -offset9 +"px)";
+                let offset = (pageYoffset - elem.offsetTop) * 0.2;
+                target.style.transform = "translateY("+ -offset +"px)";
             });
         });
 

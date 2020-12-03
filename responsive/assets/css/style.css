@@ -148,41 +148,43 @@ body {background: url(../img/header_bg.jpg) repeat-x center top;}
 
 
 /* 마우스 오버 효과1 */
-.side1 .img {
-  -webkit-animation: snip1436 0.45s linear forwards;
-  animation: snip1436 0.45s linear forwards;
-  -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1;
-}
-@-webkit-keyframes snip1436 {
-    50% {
-      -webkit-transform: scale(0.8) translateX(0%);
-      transform: scale(0.8) translateX(0%);
-      opacity: 0.5;
-    }
-    100% {
-      -webkit-transform: scale(0.8) translateX(-150%);
-      transform: scale(0.8) translateX(-150%);
-      opacity: 0.5;
-    }
-  }
-  @keyframes snip1436 {
-    50% {
-      -webkit-transform: scale(0.8) translateX(0%);
-      transform: scale(0.8) translateX(0%);
-      opacity: 0.5;
-    }
-    100% {
-      -webkit-transform: scale(0.8) translateX(-150%);
-      transform: scale(0.8) translateX(-150%);
-      opacity: 0.5;
-    }
-  }
+.side1 {display: flex; align-items: center; justify-content: center; perspective: 1000px;}
+.side1 > div {position: relative; max-width: 400px; margin: 1%;}
+.side1 > div .front {}
+.side1 > div .back {position: absolute; left: 0; top: 0; z-index: -1;}
+.side1 > div figure {position: relative;}
+.side1 > div figcaption {position: absolute; bottom: 0; left: 0; background: rgba(0,0,0,0.8); color: #fff;width: 100%; padding: 20px; box-sizing: border-box;}
+.side1 > div figcaption h5 {font-size: 16px; padding-bottom: 10px;}
+.side1 > div figcaption p {font-size: 14px;} 
+.side1 > div img {width: 100%;}
+.side1 > div.hover1 .front {transform: rotateY(0deg); transition: transform 1s; backface-visibility: hidden;}
+.side1 > div.hover1:hover .front {transform: rotateY(180deg);}
+.side1 > div.hover1 .back {transform: rotateY(-180deg); transition: transform 1s;}
+.side1 > div.hover1:hover .back {transform: rotateY(0deg);}
 
 /* 마우스 오버 효과2 */
-.side2 {} 
+.side2 .hover2 {height: 310px; overflow: hidden; position: relative;}
+.side2 .hover2 img {}
+.side2 .hover2 h5 {font-size: 16px; text-align: center; padding-top: 2px; color: #fff;}
+.side2 .hover2 p {font-size: 12px; text-align: center; padding-bottom: 5px; color: #fff;}
+.side2 .hover2 .fig1 {width: 100%; height: 50px; background-color: rgba(0, 0, 0, 0.4); position: absolute; bottom: 1px; left: 0; opacity: 0;}
+.side2 .hover2:hover .fig1 {opacity: 1; transition: all 0.33s ease-in-out;}
+
 /* 마우스 오버 효과3 */
-.side3 {}
+.side3 .hover3 {height: 310px; overflow: hidden; position: relative;}
+.side3 .hover3 img {opacity: 1; transition: all .3s ease-in-out;}
+.side3 .hover3:hover img {opacity: 0.5;}
+.side3 .hover3::before {content: ''; width: 60px; height: 1px; background: #fff; position: absolute; left: -100%; top: 50%; transform: translate(-50%, -50%); transition: all 0.33s ease-in-out; z-index: 10;}
+.side3 .hover3::after {content: ''; width: 1px; height: 60px; background: #fff; position: absolute; left: 50%; top: -100%; transform: translate(-50%, -50%); transition: all 0.33s ease-in-out;} 
+.side3 .hover3:hover::before {left: 50%; top: 50%;}
+.side3 .hover3:hover::after {left: 50%; top: 50%;}
+
+
+
+
+
+
+
 
 /* 미디어쿼리 */
 @media (max-width:1220px){

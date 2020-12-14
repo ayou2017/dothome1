@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Effect01 - javascript</title>
+    <style>
+        @font-face {
+            font-family: 'RIDIBatang';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        *, *::before, *::after {box-sizing: border-box; margin: 0; padding: 0; color: #fff;}
+        a {text-decoration: none; color: #fff; transition: all 0.2s;}
+        a:hover {border-bottom: 1px dashed #fff;}
+        img {width: 100%; vertical-align: top;}
+        li {list-style: none;}
+
+        body { 
+            background: url(../img/images05@2.jpg) no-repeat center center;
+            background-size: cover; 
+            background-color:#ffcdd2;
+            background-blend-mode: luminosity;
+            height: 100vh; 
+            overflow: hidden; 
+            font-size: 16px; 
+            line-height: 1.5; 
+            font-family: 'RIDIBatang';
+            cursor: none;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: absolute; left: 0; top: 0;
+            width: 100%; height: 100vh;
+            background: rgba(255, 205, 210, 0.7);
+        }
+
+        /* info */
+        .info {
+            position: fixed; z-index: 1000;
+        }
+        .info.left {
+            left: 20px; top: 20px;
+        }
+        .info.right {
+            right: 20px; top: 20px;
+        }
+        .info.bottom {
+            right: 20px; bottom: 20px;
+        }
+        .info h1 {
+            font-size: 2rem;
+            line-height: 1.4;
+        }
+        .info p {
+            font-size: 1rem;
+        }
+        .info li {
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+        .info li a {
+            color:#fff;
+            width: 25px; height: 25px;
+            border: 1px dashed #fff;
+            display: inline-block;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 25px;
+            font-size: 0.8rem;
+            margin: 3px;
+            
+            
+        }
+        .info li a.active {
+            background: #fff;
+            color: #000;
+        }
+
+        @media (max-width: 800px){
+            .info h1 {display: none;}
+        }
+
+
+
+        /* main */
+        .contents {display: flex; justify-content: center; align-items: center; flex-direction: column; height: 100vh; width: 100%; z-index: 10; position: relative;}
+        .contents p {font-size: 2.3vw; color: #fff;}
+        .contents p:first-child {font-size: 2.5vw; line-height: 2;}
+        .contents p em {color:red; border-bottom: 2px dashed red; font-style: normal;}
+        
+
+        .cursor {
+            position: absolute;
+            left: 0; top: 0;
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            z-index: 1000;
+            background:#fff;
+            user-select: none;
+            pointer-events: none;
+            transform: scale(1);
+            transition: transform .3s ease-in-out, opacity .2s ease-in-out;
+        }
+        .cursor.active {
+            opacity: .5;
+            transform: scale(0);
+        }
+        .cursor-follower {
+            position: absolute;
+            left: 0; top: 0;
+            width: 30px; height: 30px;
+            border-radius: 50%;
+            z-index: 1000;
+            background: rgba(255,255,255,0.3);
+            user-select: none;
+            pointer-events: none;
+            transform: scale(1);
+            transition: transform .6s ease-in-out, opacity .2s ease-in-out;
+        }
+        .cursor-follower.active {
+            opacity: .7;
+            transform: scale(4);
+        }
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+
+    <main>
+        <div class="cursor"></div>
+        <div class="cursor-follower"></div>
+
+        <div class="contents">
+            <p>To know is nothing at all; <em>to imagine</em> is everything.</p>
+            <p>안다는 것은 전혀 중요하지 않다; <em>상상하는 것이</em> 중요하다.</p>
+        </div>
+    </main>
+    <!--script-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script>
+        //출력용
+        document.addEventListener("mousemove", e => {
+            document.querySelector(".pageX").textContent = e.pageX;
+            document.querySelector(".pageY").textContent = e.pageY;
+        });
+
+        //변수화
+        const cursor = document.querySelector(".cursor");
+        const follower = document.querySelector(".cursor-follower");
+        const cursorText = document.querySelectorAll(".contents em");
+        const cursorWhidth = cursor.clientWidth / 2;
+        const followerWhidth = cursor.clientWidth / 2;
+        //console.log(cursorWhidth)
+
+        //마우스 움직이기
+        document.addEventListener("mousemove", e => {
+            gsap.to(cursor,{duration: .3, left:e.pageX - cursorWhidth, top:e.pageY - cursorWhidth});
+            gsap.to(follower,{duration: .8, left:e.pageX - followerWhidth, top:e.pageY - followerWhidth});
+        });
+
+        //마우스 오버효과
+        /*cursorText.addEventListener("mouseenter",function(){
+            cursor.classList.add("active");
+            follower.classList.add("active");
+        });
+        cursorText.addEventListener("mouseleave",function(){
+            cursor.classList.remove("active");
+            follower.classList.remove("active");
+        });
+        //변수화 const cursorText = document.querySelectorAll(".contents em")
+        */
+
+        //다중선택
+        /*document.querySelectorAll(".contents em").forEach(elem =>{
+            elem.addEventListener("mouseenter",function(){
+                cursor.classList.add("active");
+                follower.classList.add("active");
+            });
+            elem.addEventListener("mouseleave",function(){
+                cursor.classList.remove("active");
+                follower.classList.remove("active");
+            });
+            
+        });*/
+        cursorText.forEach((elem) => {
+            // console.log(a)
+            // console.log(b)
+            // console.log(c)
+            elem.addEventListener("mouseenter",()=>{
+                cursor.classList.add("active");
+                follower.classList.add("active");
+            });
+            elem.addEventListener("mouseeleave",()=>{
+                cursor.classList.remove("active");
+                follower.classList.remove("active");
+            });
+        })
+        
+    </script>
+</body>
+</html>

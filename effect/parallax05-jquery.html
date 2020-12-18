@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parallax02 - javascript</title>
+    <title>Parallax05 - jQuery</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <style>
         /* reset */
@@ -142,7 +142,7 @@
             /* padding-bottom: 50%; */
             padding-bottom: calc(var(--width) / (var(--aspect-ratio)));
             overflow: hidden;
-            /* background: red; */
+            background: red;
         }
         .content-item-img {
             width: var(--width);
@@ -207,22 +207,146 @@
             background: url(img/images09.jpg);
             background-size: cover;
         }
+
+       /* .content-item-scroll{
+            padding-top: 70px;
+            position: relative;
+            bottom: -50px;
+            left: 75%;
+            z-index: 2;
+            display: inline-block;
+            transform: translate(0, -50%);
+            color: #fff;
+            transition: opacity .3s;
+        }
+        .content-item:nth-child(even) .content-item-scroll {
+            left: 15%;
+        }
+
+        .content-item-scroll a span {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 24px;
+            height: 24px;
+            margin-left: -12px;
+            border-left: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+            transform: rotate(-45deg);
+            animation: scroll 2s infinite;
+            opacity: 1;
+            box-sizing: border-box;
+        }
+
+        .content-item-scroll a span:nth-of-type(1) {
+            -webkit-animation-delay: 0s;
+            animation-delay: 0s;
+        }
+        .content-item-scroll a span:nth-of-type(2) {
+            top: 16px;
+            -webkit-animation-delay: .15s;
+            animation-delay: .15s;
+        }
+        .content-item-scroll a span:nth-of-type(3) {
+            top: 32px;
+            -webkit-animation-delay: .3s;
+            animation-delay: .3s;
+        }
+        @-webkit-keyframes scroll {
+            0% {opacity: 0;}
+            50% {opacity: 1;}
+            100% {opacity: 0;}
+        }
+        @keyframes scroll {
+            0% {opacity: 0;}
+            50% {opacity: 1;}
+            100% {opacity: 0;}
+        } */
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .content-item-scroll {
+            position: absolute;
+            bottom: -20%; left: 70%;
+            z-index: 2;
+            display: inline-block;
+            -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+            color: #fff;
+            font : normal 400 20px/1 'Josefin Sans', sans-serif;
+            letter-spacing: .1em;
+            text-decoration: none;
+            transition: opacity .3s;
+        }
+
+        .content-item:nth-child(even) .content-item-scroll {
+            left: 25%;
+        }
+        .content-item-scroll span {
+            position: absolute;
+            bottom: 150%; left: 50%;
+            width: 30px;
+            height: 50px;
+            margin-left: -15px;
+            border: 2px solid #fff;
+            border-radius: 50px;
+            box-sizing: border-box;
+        }
+        .content-item-scroll span::before {
+            position: absolute;
+            top: 10px; left: 50%;
+            content: '';
+            width: 6px;
+            height: 6px;
+            margin-left: -3px;
+            background-color: #fff;
+            border-radius: 100%;
+            animation: scroll 2s infinite;
+            box-sizing: border-box;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translate(0, 0);
+                opacity: 0;
+            }
+            40% {
+                opacity: 1;
+            }
+            80% {
+                transform: translate(0, 20px);
+                opacity: 0;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 <body>
 
     <!-- info -->
     <div class="info left">
-        <h1>Parallax Effect02 - Javascript</h1>
-        <p>패랠랙스 스크로링 효과 - 이질감 느끼기</p>
+        <h1>Parallax Effect05 - jQuery</h1>
+        <p>패랠랙스 스크로링 효과 - 글자 나타나기</p>
     </div>
     <div class="info right">
         <ul>
             <li><a href="parallax01-jquery.html">1</a><a href="parallax01-javascript.html">1</a></li>
-            <li><a href="parallax02-jquery.html">2</a><a href="parallax02-javascript.html" class="active">2</a></li>
+            <li><a href="parallax02-jquery.html">2</a><a href="parallax02-javascript.html">2</a></li>
             <li><a href="parallax03-jquery.html">3</a><a href="parallax03-javascript.html">3</a></li>
             <li><a href="parallax04-jquery.html">4</a><a href="parallax04-javascript.html">4</a></li>
-            <li><a href="parallax05-jquery.html">5</a><a href="parallax05-javascript.html">5</a></li>
+            <li><a href="parallax05-jquery.html" class="active">5</a><a href="parallax05-javascript.html">5</a></li>
             <li><a href="parallax06-jquery.html">6</a><a href="parallax06-javascript.html">6</a></li>
             <li><a href="parallax07-jquery.html">7</a><a href="parallax07-javascript.html">7</a></li>
             <li><a href="parallax08-jquery.html">8</a><a href="parallax08-javascript.html">8</a></li>
@@ -249,6 +373,7 @@
                         <div class="content-item-img"></div>
                     </figure>
                     <p class="content-item-desc">기운과 끈기는 모든 것을 이겨낸다.</p>
+                    <a class="content-item-scroll" href="#section6" aria-hidden="true" rel="nopner"><span></span><span></span><span></span>section6</a>
                 </section>
                 <section id="section2" class="content-item">
                     <span class="content-item-num">02</span>
@@ -257,6 +382,7 @@
                         <div class="content-item-img"></div>
                     </figure>
                     <p class="content-item-desc">무엇보다도, 준비가 성공의 열쇠이다</p>
+                    <a class="content-item-scroll" href="#section7" aria-hidden="true" rel="nopner"><span></span><span></span><span></span>section7</a>
                 </section>
                 <section id="section3" class="content-item">
                     <span class="content-item-num">03</span>
@@ -265,6 +391,7 @@
                         <div class="content-item-img"></div>
                     </figure>
                     <p class="content-item-desc">우리가 실패에서 배우면, 실패는 성공이 된다.</p>
+                    <a class="content-item-scroll" href="#section8" aria-hidden="true" rel="nopner"><span></span><span></span><span></span>section8</a>
                 </section>
                 <section id="section4" class="content-item">
                     <span class="content-item-num">04</span>
@@ -273,6 +400,7 @@
                         <div class="content-item-img"></div>
                     </figure>
                     <p class="content-item-desc">무언가 자꾸 반복하다 보면 우리 자신이 그것이 됩니다.</p>
+                    <a class="content-item-scroll" href="#section9" aria-hidden="true" rel="nopner"><span></span><span></span><span></span>section9</a>
                 </section>
                 <section id="section5" class="content-item">
                     <span class="content-item-num">05</span>
@@ -281,6 +409,7 @@
                         <div class="content-item-img"></div>
                     </figure>
                     <p class="content-item-desc">모든 진보는 익숙한 영역이 아닌 곳에서 이뤄진다.</p>
+                    <a class="content-item-scroll" href="#section4"  aria-hidden="true" rel="nopner"><span></span><span></span><span></span>section4</a>
                 </section>
                 <section id="section6" class="content-item">
                     <span class="content-item-num">06</span>
@@ -289,6 +418,7 @@
                         <div class="content-item-img"></div>
                     </figure>
                     <p class="content-item-desc">성공은 매일 반복한 작은 노력들의 합이다.</p>
+                    <a class="content-item-scroll" href="#section5" aria-hidden="true" rel="nopner"><span></span><span></span><span></span>section5</a>
                 </section>
                 <section id="section7" class="content-item">
                     <span class="content-item-num">07</span>
@@ -297,6 +427,7 @@
                         <div class="content-item-img"></div>
                     </figure>
                     <p class="content-item-desc">모방해서 성공하는 것보다 독창적으로 실패하는 게 더 낫다.</p>
+                    <a class="content-item-scroll" href="#section2" aria-hidden="true" rel="nopner"><span></span><span></span><span></span>section2</a>
                 </section>
                 <section id="section8" class="content-item">
                     <span class="content-item-num">08</span>
@@ -305,6 +436,7 @@
                         <div class="content-item-img"></div>
                     </figure>
                     <p class="content-item-desc">게으른 예술가가 만든 명작은 없다.</p>
+                    <a class="content-item-scroll" href="#section1" aria-hidden="true" rel="nopner"><span></span><span></span><span></span>section1</a>
                 </section>
                 <section id="section9" class="content-item">
                     <span class="content-item-num">09</span>
@@ -313,6 +445,7 @@
                         <div class="content-item-img"></div>
                     </figure>
                     <p class="content-item-desc">운은 용기를 내는 사람의 편이다.</p>
+                    <a  class="content-item-scroll" href="#section3"><span></span><span></span><span></span>section3</a>
                 </section>
             </div>
         </section>
@@ -321,46 +454,17 @@
 
 
     <!-- script -->
-   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script>
-        window.addEventListener("scroll", () => {
-            let pageYoffset = (window.pageXOffset || document.documentElement.scrollTop)/*최신소스||옛날버전-호환성맞춤   타임스크립트?*/
+        $("a[href^='#']").click(function(e){
+            e.preventDefault();
+            let target = $( $(this).attr("href") );
 
-            /* let offset1 = (pageYoffset - document.getElementById("section1").offsetTop) * 0.2;
-            let offset2 = (pageYoffset - document.getElementById("section2").offsetTop) * 0.2;
-            let offset3 = (pageYoffset - document.getElementById("section3").offsetTop) * 0.2;
-            let offset4 = (pageYoffset - document.getElementById("section4").offsetTop) * 0.2;
-            let offset5 = (pageYoffset - document.getElementById("section5").offsetTop) * 0.2;
-            let offset6 = (pageYoffset - document.getElementById("section6").offsetTop) * 0.2;
-            let offset7 = (pageYoffset - document.getElementById("section7").offsetTop) * 0.2;
-            let offset8 = (pageYoffset - document.getElementById("section8").offsetTop) * 0.2;
-            let offset9 = (pageYoffset - document.getElementById("section9").offsetTop) * 0.2;
-
-            document.querySelector("#section1 .content-item-desc").style.transform = "translateY("+ -offset1 +"px)";
-            document.querySelector("#section2 .content-item-desc").style.transform = "translateY("+ -offset2 +"px)";
-            document.querySelector("#section3 .content-item-desc").style.transform = "translateY("+ -offset3 +"px)";
-            document.querySelector("#section4 .content-item-desc").style.transform = "translateY("+ -offset4 +"px)";
-            document.querySelector("#section5 .content-item-desc").style.transform = "translateY("+ -offset5 +"px)";
-            document.querySelector("#section6 .content-item-desc").style.transform = "translateY("+ -offset6 +"px)";
-            document.querySelector("#section7 .content-item-desc").style.transform = "translateY("+ -offset7 +"px)";
-            document.querySelector("#section8 .content-item-desc").style.transform = "translateY("+ -offset8 +"px)";
-            document.querySelector("#section9 .content-item-desc").style.transform = "translateY("+ -offset9 +"px)"; */
-
-
-            //for문
-            /* for(let i=1; i>=9; i++){
-                let offset = (pageYoffset - document.getElementById("#section"+i).offsetTop) * 0.2;
-                document.querySelector("#section"+i+" .content-item-desc").style.transform = "translateY("+ -offset +"px)";
-            } */
-
-            document.querySelectorAll(".content-item").forEach((elem) => {
-                let target = elem.childNodes[7];
-                let offset = (pageYoffset - elem.offsetTop) * 0.2;
-                target.style.transform = "translateY("+ -offset +"px)";
-            });
+            $("html, body").animate({ scrollTop : target.offset().top }, 800, "easeInOut");
         });
-
-        
     </script>
+
 </body>
 </html>

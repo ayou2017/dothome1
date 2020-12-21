@@ -323,30 +323,27 @@
     <!-- script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script>
-        let pageYoffset = window.pageXOffset;
-
+        let pageYOffset = window.pageYOffset
         const scroll = () => {
-            const newPageYOffset = window.pageXOffset;
+            const newPageYOffset = window.pageYOffset;
             const different = newPageYOffset - pageYOffset;
-
-            console.log("scrollTop :" + pageYOffset);
-            console.log("newScrollTop :" + newPageYOffset);
+            console.log("pageYOffset :" + pageYOffset);
+            console.log("newPageYOffset :" + newPageYOffset);
             console.log("different :" + different);
-
-            let target = document.querySelectorAll(".content-item-img");
-
+            let target = document.querySelectorAll(".content-item-imgWrap");
             //target.style.transform = "rotate("+different+"deg)";
             //forEach
-            target.forEach(box => {
-                box.style.transform = "rotate("+ different +"deg)";
+            target.forEach((elem)=>{
+                elem.style.transform = "rotate("+different*+"deg)";
             });
-
-            gasp.to(".content-item-imgWrap"), {duration: .3, skewY : different,}
-
-            pageYOffset = newPageYOffset;
+            gsap.to(".content-item-imgWrap", {duration: .3, skewY: different*0.2, ease: Power1.out});
+            gsap.to(".content-item-num", {duration: .6, x: different*0.5, ease: Power4.out});
+            gsap.to(".content-item-desc", {duration: .6, skewX: different*0.2, ease: Power3.out});
+            pageYOffset = newPageYOffset
             requestAnimationFrame(scroll);
         }
         scroll();
+        
         /*let num = 0;
         function render(){
             document.querySelector(".content-item-num").innerHTML = num;
@@ -355,6 +352,10 @@
             requestAnimationFrame(render);
         }
         render();*/
+
+
+
+        
     </script>
 </body>
 </html>

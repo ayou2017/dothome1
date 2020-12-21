@@ -324,27 +324,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script>
-        let scrollTop = $(window).scrollTop(); //100
-        
+        let scrollTop = $(window).scrollTop();
+
         function scroll(){
-            const newScrollTop = $(window).scrollTop(); //90(시간차 오차 생김)
+            const newScrollTop = $(window).scrollTop();     //90(시간차 오차 생김)
             const different = newScrollTop - scrollTop;
 
             console.log("scrollTop :" + scrollTop);
             console.log("newScrollTop :" + newScrollTop);
             console.log("different :" + different);
-            
-            //$(".content-item-imgWrap").css({"transform":"rotate("+ different +"deg)"});
-            gasp.to(".content-item-imgWrap", {duration: .3, skewY: different * 0.2, ease: Power1.ease});/*범위 적게 곱하기해주기*/
-            gasp.to(".content-item-num", {duration: .6, x: different * 3, ease: Power1.ease});
-            gasp.to(".content-item-desc", {duration: .6, skewX: different * 0.2, ease: Power4.ease});
+
+            // $(".content-item-imgWrap").css({"transform": "rotateZ("+different+"deg)"});
+            gsap.to(".content-item-imgWrap", {duration: .3, skewY: different * 0.2, ease: "power2.out"});/*범위 적게 곱하기해주기*/
+            gsap.to(".content-item-num", {duration: .6, x: different *3, ease: "power2.out"});
+            gsap.to(".content-item-desc", {duration: .6, skewX: different * 0.2, ease: "power4.out"});
             //setInterval() => {}
             //1초에 60번 확인(함수를 돌림) 장점-메모리적음
             scrollTop = newScrollTop;   //0으로 초기화해야 0부터 실행
-            requestAnimationFrame(scroll);  
-            
+            requestAnimationFrame(scroll);
         }
-        scroll();
+        scroll()
     </script>
 
 </body>

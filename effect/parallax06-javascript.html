@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parallax05 - jQuery</title>
+    <title>Parallax04 - jQuery</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <style>
         /* reset */
@@ -142,7 +142,7 @@
             /* padding-bottom: 50%; */
             padding-bottom: calc(var(--width) / (var(--aspect-ratio)));
             overflow: hidden;
-            background: red;
+            /* background: red; */
         }
         .content-item-img {
             width: var(--width);
@@ -208,136 +208,128 @@
             background-size: cover;
         }
 
-       /* .content-item-scroll{
-            padding-top: 70px;
+        /* reveal - imgWrap */
+        
+        .reveal > div, 
+        .reveal > span {
+            opacity: 0;
+        }
+        .reveal.show > div, 
+        .reveal.show > span {
+            animation: opacitiy 1000ms 200ms linear forwards;
+        }
+        .reveal {
             position: relative;
-            bottom: -50px;
-            left: 75%;
-            z-index: 2;
-            display: inline-block;
-            transform: translate(0, -50%);
-            color: #fff;
-            transition: opacity .3s;
         }
-        .content-item:nth-child(even) .content-item-scroll {
-            left: 15%;
-        }
-
-        .content-item-scroll a span {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 24px;
-            height: 24px;
-            margin-left: -12px;
-            border-left: 1px solid #fff;
-            border-bottom: 1px solid #fff;
-            transform: rotate(-45deg);
-            animation: scroll 2s infinite;
-            opacity: 1;
-            box-sizing: border-box;
-        }
-
-        .content-item-scroll a span:nth-of-type(1) {
-            -webkit-animation-delay: 0s;
-            animation-delay: 0s;
-        }
-        .content-item-scroll a span:nth-of-type(2) {
-            top: 16px;
-            -webkit-animation-delay: .15s;
-            animation-delay: .15s;
-        }
-        .content-item-scroll a span:nth-of-type(3) {
-            top: 32px;
-            -webkit-animation-delay: .3s;
-            animation-delay: .3s;
-        }
-        @-webkit-keyframes scroll {
-            0% {opacity: 0;}
-            50% {opacity: 1;}
-            100% {opacity: 0;}
-        }
-        @keyframes scroll {
-            0% {opacity: 0;}
-            50% {opacity: 1;}
-            100% {opacity: 0;}
-        } */
-
-
-
-
-
-
-
-
-
-
-
-
-
-        .content-item-scroll {
-            position: absolute;
-            bottom: -20%; left: 70%;
-            z-index: 2;
-            display: inline-block;
-            -webkit-transform: translate(0, -50%);
-            transform: translate(0, -50%);
-            color: #fff;
-            font : normal 400 20px/1 'Josefin Sans', sans-serif;
-            letter-spacing: .1em;
-            text-decoration: none;
-            transition: opacity .3s;
-        }
-
-        .content-item:nth-child(even) .content-item-scroll {
-            left: 25%;
-        }
-        .content-item-scroll span {
-            position: absolute;
-            bottom: 150%; left: 50%;
-            width: 30px;
-            height: 50px;
-            margin-left: -15px;
-            border: 2px solid #fff;
-            border-radius: 50px;
-            box-sizing: border-box;
-        }
-        .content-item-scroll span::before {
-            position: absolute;
-            top: 10px; left: 50%;
+        .reveal::before {
             content: '';
-            width: 6px;
-            height: 6px;
-            margin-left: -3px;
-            background-color: #fff;
-            border-radius: 100%;
-            animation: scroll 2s infinite;
-            box-sizing: border-box;
+            position: absolute;
+            right: 0; top: 0;
+            width: 0;
+            height: 100%;
+            z-index: 100;
+            background: #fff;
+        }
+        .reveal.reveal-two::after {
+            content: '';
+            position: absolute;
+            right: 0; top: 0;
+            width: 0;
+            height: 100%;
+            z-index: 100;
+            background: #dc6e25;
+        }
+        .reveal.reveal-TTB::before {
+            content: '';
+            position: absolute;
+            right: 0; top: 0;
+            width: 100%;
+            height: 0;
+            z-index: 100;
+            background: #fff;
+        }
+        .reveal.reveal-BTT::before {
+            content: '';
+            position: absolute;
+            right: 0; top: 0;
+            width: 100%;
+            height: 0;
+            z-index: 100;
+            background: #fff;
         }
 
-        @keyframes scroll {
-            0% {
-                transform: translate(0, 0);
-                opacity: 0;
-            }
-            40% {
-                opacity: 1;
-            }
-            80% {
-                transform: translate(0, 20px);
-                opacity: 0;
-            }
-            100% {
-                opacity: 0;
-            }
+        /* 기본값 */
+        .reveal.show::before {
+            animation: reveal 1000ms cubic-bezier(.77,0,.18,1);
         }
+        .reveal.reveal-RTL.show::before {
+            animation: reveal-RTL 1000ms cubic-bezier(.77,0,.18,1);
+        }
+        .reveal.reveal-TTB.show::before {
+            animation: reveal-TTB 1000ms cubic-bezier(.77,0,.18,1);
+        }
+        .reveal.reveal-BTT.show::before {
+            animation: reveal-BTT 1000ms cubic-bezier(.77,0,.18,1);
+        }
+
+        /* 두가지 */
+        .reveal.reveal-two.show::after {
+            animation: reveal-two 1000ms 300ms cubic-bezier(.77,0,.18,1);
+        }
+        .reveal.reveal-two.reveal-RTL.show::after {
+            animation: reveal-two-RTL 1000ms 300ms cubic-bezier(.77,0,.18,1);
+        }
+        .reveal.reveal-two.reveal-TTB.show::after {
+            animation: reveal-two-TTB 1000ms 300ms cubic-bezier(.77,0,.18,1);
+        }
+        .reveal.reveal-two.reveal-BTT.show::after {
+            animation: reveal-two-BTT 1000ms 300ms cubic-bezier(.77,0,.18,1);
+        }
+
+        @keyframes reveal {
+            0% {width: 0; left: 0;}
+            50% {width: 100%; left: 0;}
+            80% {width: 100%; left: 0;}
+            100% {width: 0; left: 100%;}
+        }
+        @keyframes reveal-two {
+            0% {width: 0; left: 0;}
+            50% {width: 100%; left: 0;}
+            80% {width: 100%; left: 0;}
+            100% {width: 0; left: 100%;}
+        }
+        @keyframes reveal-RTL {
+            0% {width: 0; right: 0;}
+            50% {width: 100%; right: 0;}
+            80% {width: 100%; right: 0;}
+            100% {width: 0; right: 100%;}
+        }
+        @keyframes reveal-TTB {
+            0% {height: 0; top: 0;}
+            50% {height: 100%; top: 0;}
+            80% {height: 100%; top: 0;}
+            100% {height: 0; top: 100%;}
+        }
+        @keyframes reveal-BTT {
+            0% {height: 0; top: 100%;}
+            50% {height: 100%; top: 0;}
+            80% {height: 100%; top: 0;}
+            100% {height: 0; top: 0%;}
+        }
+        @keyframes opacitiy {
+            0% {opacity: 0;}
+            60% {opacity: 0;}
+            70% {opacity: 1;}
+            100% {opacity: 1;}
+        }
+        
     </style>
 </head>
 <body>
 
     <!-- info -->
     <div class="info left">
-        <h1>Parallax Effect05 - jQuery</h1>
+        <h1>Parallax Effect06 - jQuery</h1>
         <p>패랠랙스 스크로링 효과 - 글자 나타나기</p>
     </div>
     <div class="info right">
@@ -346,8 +338,8 @@
             <li><a href="parallax02-jquery.html">2</a><a href="parallax02-javascript.html">2</a></li>
             <li><a href="parallax03-jquery.html">3</a><a href="parallax03-javascript.html">3</a></li>
             <li><a href="parallax04-jquery.html">4</a><a href="parallax04-javascript.html">4</a></li>
-            <li><a href="parallax05-jquery.html" class="active">5</a><a href="parallax05-javascript.html">5</a></li>
-            <li><a href="parallax06-jquery.html">6</a><a href="parallax06-javascript.html">6</a></li>
+            <li><a href="parallax05-jquery.html">5</a><a href="parallax05-javascript.html">5</a></li>
+            <li><a href="parallax06-jquery.html" class="active">6</a><a href="parallax06-javascript.html">6</a></li>
             <li><a href="parallax07-jquery.html">7</a><a href="parallax07-javascript.html">7</a></li>
             <li><a href="parallax08-jquery.html">8</a><a href="parallax08-javascript.html">8</a></li>
             <li><a href="parallax09-jquery.html">9</a><a href="parallax09-javascript.html">9</a></li>
@@ -372,81 +364,71 @@
                     <figure class="content-item-imgWrap">
                         <div class="content-item-img"></div>
                     </figure>
-                    <p class="content-item-desc">기운과 끈기는 모든 것을 이겨낸다.</p>
-                    <a class="content-item-scroll" href="#section6" aria-hidden="true" rel="noopener"><span></span><span></span><span></span>section6</a>
+                    <p class="content-item-desc"><span>기운과 끈기는 모든 것을 이겨낸다.</span></p>
                 </section>
                 <section id="section2" class="content-item">
                     <span class="content-item-num">02</span>
                     <h2 class="content-item-title">Section2</h2>
-                    <figure class="content-item-imgWrap">
+                    <figure class="content-item-imgWrap reveal reveal-RTL">
                         <div class="content-item-img"></div>
                     </figure>
-                    <p class="content-item-desc">무엇보다도, 준비가 성공의 열쇠이다</p>
-                    <a class="content-item-scroll" href="#section7" aria-hidden="true" rel="noopener"><span></span><span></span><span></span>section7</a>
+                    <p class="content-item-desc reveal reveal-RTL"><span>무엇보다도, 준비가 성공의 열쇠이다</span></p>
                 </section>
                 <section id="section3" class="content-item">
                     <span class="content-item-num">03</span>
                     <h2 class="content-item-title">Section3</h2>
-                    <figure class="content-item-imgWrap">
+                    <figure class="content-item-imgWrap reveal reveal-RTL">
                         <div class="content-item-img"></div>
                     </figure>
-                    <p class="content-item-desc">우리가 실패에서 배우면, 실패는 성공이 된다.</p>
-                    <a class="content-item-scroll" href="#section8" aria-hidden="true" rel="noopener"><span></span><span></span><span></span>section8</a>
-                    
+                    <p class="content-item-desc reveal reveal-RTL"><span>우리가 실패에서 배우면, 실패는 성공이 된다.</span></p>
                 </section>
                 <section id="section4" class="content-item">
                     <span class="content-item-num">04</span>
                     <h2 class="content-item-title">Section4</h2>
-                    <figure class="content-item-imgWrap">
+                    <figure class="content-item-imgWrap reveal reveal-two">
                         <div class="content-item-img"></div>
                     </figure>
-                    <p class="content-item-desc">무언가 자꾸 반복하다 보면 우리 자신이 그것이 됩니다.</p>
-                    <a class="content-item-scroll" href="#section9" aria-hidden="true" rel="noopener"><span></span><span></span><span></span>section9</a>
+                    <p class="content-item-desc reveal reveal-two"><span>무언가 자꾸 반복하다 보면 우리 자신이 그것이 됩니다.</span></p>
                 </section>
                 <section id="section5" class="content-item">
                     <span class="content-item-num">05</span>
                     <h2 class="content-item-title">Section5</h2>
-                    <figure class="content-item-imgWrap">
+                    <figure class="content-item-imgWrap reveal reveal-two">
                         <div class="content-item-img"></div>
                     </figure>
-                    <p class="content-item-desc">모든 진보는 익숙한 영역이 아닌 곳에서 이뤄진다.</p>
-                    <a class="content-item-scroll" href="#section4"  aria-hidden="true" rel="noopener"><span></span><span></span><span></span>section4</a>
+                    <p class="content-item-desc reveal reveal-two"><span>모든 진보는 익숙한 영역이 아닌 곳에서 이뤄진다.</span></p>
                 </section>
                 <section id="section6" class="content-item">
                     <span class="content-item-num">06</span>
                     <h2 class="content-item-title">Section6</h2>
-                    <figure class="content-item-imgWrap">
+                    <figure class="content-item-imgWrap reveal reveal-BTT">
                         <div class="content-item-img"></div>
                     </figure>
-                    <p class="content-item-desc">성공은 매일 반복한 작은 노력들의 합이다.</p>
-                    <a class="content-item-scroll" href="#section5" aria-hidden="true" rel="noopener"><span></span><span></span><span></span>section5</a>
+                    <p class="content-item-desc reveal reveal-BTT"><span>성공은 매일 반복한 작은 노력들의 합이다.</span></p>
                 </section>
                 <section id="section7" class="content-item">
                     <span class="content-item-num">07</span>
                     <h2 class="content-item-title">Section7</h2>
-                    <figure class="content-item-imgWrap">
+                    <figure class="content-item-imgWrap reveal reveal-BTT">
                         <div class="content-item-img"></div>
                     </figure>
-                    <p class="content-item-desc">모방해서 성공하는 것보다 독창적으로 실패하는 게 더 낫다.</p>
-                    <a class="content-item-scroll" href="#section2" aria-hidden="true" rel="noopener"><span></span><span></span><span></span>section2</a>
+                    <p class="content-item-desc reveal reveal-BTT"><span>모방해서 성공하는 것보다 독창적으로 실패하는 게 더 낫다.</span></p>
                 </section>
                 <section id="section8" class="content-item">
                     <span class="content-item-num">08</span>
                     <h2 class="content-item-title">Section8</h2>
-                    <figure class="content-item-imgWrap">
+                    <figure class="content-item-imgWrap reveal reveal-TTB">
                         <div class="content-item-img"></div>
                     </figure>
-                    <p class="content-item-desc">게으른 예술가가 만든 명작은 없다.</p>
-                    <a class="content-item-scroll" href="#section1" aria-hidden="true" rel="noopener"><span></span><span></span><span></span>section1</a>
+                    <p class="content-item-desc reveal reveal-TTB"><span>게으른 예술가가 만든 명작은 없다.</span></p>
                 </section>
                 <section id="section9" class="content-item">
                     <span class="content-item-num">09</span>
                     <h2 class="content-item-title">Section9</h2>
-                    <figure class="content-item-imgWrap">
+                    <figure class="content-item-imgWrap reveal reveal-TTB">
                         <div class="content-item-img"></div>
                     </figure>
-                    <p class="content-item-desc">운은 용기를 내는 사람의 편이다.</p>
-                    <a class="content-item-scroll" href="#section3" aria-hidden="true" rel="noopener"><span></span><span></span><span></span>section3</a>
+                    <p class="content-item-desc reveal reveal-TTB"><span>운은 용기를 내는 사람의 편이다.</span></p>
                 </section>
             </div>
         </section>
@@ -455,19 +437,24 @@
 
 
     <!-- script -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    
     <script>
-        $("a[href^='#']").click(function(e){
-            e.preventDefault();
-            let target = $( $(this).attr("href") );
+        function scrollReveal(){
+            const reveal = document.querySelectorAll(".reveal");
+            reveal.forEach(elem => {
+                let scrollTop = document.documentElement.scrollTop+window.innerHeight/2//중간에 왔을때 애니메이션주기
+                console.log(elem.offsetTop)//p태그, 이미지 -> 부모요소기준으로 떨어져있다(기준을 윈도우로 바꿔주기-$(this).offset().top)
+                let offsetTop = elem.offsetTop + elem.parentElement.offsetTop;//값이 안구해짐
+                console.log(offsetTop);
 
-            $("html, body").animate({ scrollTop : target.offset().top }, 800, "easeInQuad");
-        });
-
-        
+                if(scrollTop > offsetTop){
+                    elem.classList.add("show");
+                }
+            })
+        }
+        window.addEventListener("scroll", scrollReveal)
     </script>
+   
 
 </body>
 </html>

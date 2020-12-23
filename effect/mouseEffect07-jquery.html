@@ -119,24 +119,20 @@
             border-bottom: 2px dashed orange;
             font-style: normal;
         }
-        .contents p .word {
-            color: orange;
-            font-size: 4vw;
-            /* text-shadow: 10px -10px 0px rgba(255, 165, 0, 0.4),
-                            -10px 10px 0px rgba(255, 35, 251, 0.4), 
-                            10px -5px 0px rgba(255, 255, 73, 0.4), 
-                            -10px 5px 0px rgba(102,249, 255, 0.4); */
-        }
         .cursor {
             position: absolute;
-            width: 20px; height: 20px;
-            background: #fff;
+            width: 200px; height: 200px;
             border-radius: 50%;
-            z-index: 1000;
+            /* z-index: -1; */
             user-select: none;
             pointer-events: none;
-            transform: scale(.5);
-            transition: transform 0.3s ease-in-out;
+            border: 5px solid #fff;
+            background-image: url(img/images07@2.jpg);
+            background-position: center center;
+
+            background-size: cover;
+            background-attachment: fixed;/*이미지는 고정되어 있는 상태에서 커서크기만큼 보여주는거?*/
+            background-color: #fff;
         }
 
     </style>
@@ -144,7 +140,7 @@
 <body>
     <!-- info -->
     <div class="info left">
-        <h1>Mouse Effect06 - jquery</h1>
+        <h1>Mouse Effect07 - jquery</h1>
         <p>마우스 방향에 따라 움직이기</p>
     </div>
     <div class="info right">
@@ -154,8 +150,8 @@
             <li><a href="mouseEffect03-jquery.html">3</a><a href="mouseEffect03-javascript.html">3</a></li>
             <li><a href="mouseEffect04-jquery.html">4</a><a href="mouseEffect04-javascript.html">4</a></li>
             <li><a href="mouseEffect05-jquery.html">5</a><a href="mouseEffect05-javascript.html">5</a></li>
-            <li><a href="mouseEffect06-jquery.html" class="active">6</a><a href="mouseEffect06-javascript.html">6</a></li>
-            <li><a href="mouseEffect07-jquery.html">7</a><a href="mouseEffect07-javascript.html">7</a></li>
+            <li><a href="mouseEffect06-jquery.html">6</a><a href="mouseEffect06-javascript.html">6</a></li>
+            <li><a href="mouseEffect07-jquery.html" class="active">7</a><a href="mouseEffect07-javascript.html">7</a></li>
             <li><a href="mouseEffect08-jquery.html">8</a><a href="mouseEffect08-javascript.html">8</a></li>
             <li><a href="mouseEffect09-jquery.html">9</a><a href="mouseEffect09-javascript.html">9</a></li>
         </ul>
@@ -166,22 +162,17 @@
 
 
     <main>
+        <div class="cursor"></div>
+
         <div class="contents">
-
-                    <p>Animals are such agreeable <em class="word">friends</em> - they ask no questions, they pass no criticisms.</p>
-                    <p>동물은 정말 유쾌한 <em class="word">친구</em>다. 질문도 비판도 하지 않으므로.</p>
-                    <p>
-                        <strong class="word">★</strong>
-                    </p>
-
+            <p>Be sure you put your feet in the right place,then stand <em>firm</em>.</p>
+            <p>자신의 발을 제자리에 두었는지 확인한 다음, <em>굳건히</em> 서라.</p>
         </div>
 
         <div class="info bottom">
             <ul>
                <li>mouseX : <span class="mouseX"></span></li>
                <li>mouseY : <span class="mouseY"></span></li>
-               <li>mouseX2 : <span class="mouseX2"></span></li>
-               <li>mouseY2 : <span class="mouseY2"></span></li>
             </ul>
         </div>
     </main>
@@ -189,19 +180,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script>
-        $(window).mousemove(function(e){
-            let x = e.pageX;
-            let y = e.pageY;
-            let mouseX = (x - $(".word").offset().letf - $(".word").width()/2 ) / $(".word").width() * 5;
-            let mouseY = (x - $(".word").offset().top - $(".word").width()/2 ) / $(".word").height() * 5;
+        const cursorWidth = $(".cursor").outerWidth()/2;
+        const cursorHeight = $(".cursor").outerHeight()/2;
 
-            $(".word").css({textShadow:""+mouseX+"px -"+mouseY+"px 0px rgba(255, 165, 9, 0.4), -"+mouseX+"px "+mouseY+"px 0px rgba(255, 35, 251, 0.4), "+mouseX+"px -"+mouseY+"px 0px rgba(255, 255, 73, 0.4), -"+mouseX+"px "+mouseY+"px 0px rgba(102, 249, 255, 0.4)"});
-        
-            //출력용
-            $(".mouseX").text(parseInt(mouseX));
-            $(".mouseY").text(parseInt(mouseY));
-            $(".mouseX2").text(parseInt(-mouseX));
-            $(".mouseY2").text(parseInt(-mouseY));
+        $(window).mousemove(function(e){
+            gsap.to(".cursor",{duration: 0.5, left: e.pageX - cursorWidth, top: e.pageY - cursorHeight});//마우스 따라 다니기
         })
     </script>
 </body>

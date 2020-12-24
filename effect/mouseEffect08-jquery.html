@@ -95,48 +95,48 @@
 
 
         /* main */
-        .text-wrap{
+        .text-wrap {
             position: absolute;
             left: 50%; top: 50%;
-            transform: translate(-50%, -20%);
+            transform: translate(-50%, -20%); 
             font-size: 3vw;
+            z-index: 5000;
         }
-
-        
         .text-wrap .line {
             width: 100%;
             display: flex;
         }
-        .text-wrap .line .left{
+        .text-wrap .line .left {
             width: 50vw;
             transform: skew(0deg, -15deg);
             overflow: hidden;
-        }
+        }   
         .text-wrap .line .left .span-wrap {
             width: 100vw;
             text-align: center;
         }
-        .text-wrap .line .left .span-wrap {
+        .text-wrap .line .left .span-wrap span {
             color: gold;
         }
 
-
-        .text-wrap .line .right{
+        .text-wrap .line .right {
             width: 50vw;
             transform: skew(0deg, 15deg);
             overflow: hidden;
         }
-        .text-wrap .line .right .span-wrap{
+        .text-wrap .line .right .span-wrap {
             width: 100vw;
             text-align: center;
             transform: translate(-50vw);
+        }
+        .text-wrap span {
+            display: inline-block;
         }
 
         .img-wrap {
             position: absolute;
             left: 50%; top: 50%;
             transform: translate(-50%, -50%);
-            z-index: -1;
         }
 
        
@@ -145,7 +145,7 @@
 <body>
     <!-- info -->
     <div class="info left">
-        <h1>Mouse Effect07 - jquery</h1>
+        <h1>Mouse Effect08 - jquery</h1>
         <p>마우스 방향에 따라 움직이기</p>
     </div>
     <div class="info right">

@@ -213,7 +213,7 @@
 ================================================== */
 
 #contents_tit {
-	background-color: #fff;
+	background-color: #3091f2;
 	text-align: center; 
 	height: 90px;
 	
@@ -223,7 +223,7 @@
 	font-family: 'Gaegu', cursive; font-size: 40px;
 }
 #contents_tit p a {
-	color:#2c94c4; 
+	color:#fff; 
 }
 
 

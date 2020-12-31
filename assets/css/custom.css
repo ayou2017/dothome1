@@ -52,8 +52,8 @@ body {background:#f1f4fb url(../img/body_bg.gif)}
 /* Header  */
 
 #header{
-	background: url(../ico/do_icon/H.png) center 57px;
-	background-size: cover;
+	background: url(../ico/do_icon/H_bg.png) center 57px;
+	/* background-size: cover; */
 	padding: 10px 0 10px 0px;
 }
 #header.sub {
@@ -135,7 +135,7 @@ pre.pre-show{
 
 .header_icon {text-align: center;}
 .header_icon li {display: inline; margin: 0 2px;}
-.header_icon li a {position: relative; background-color: #fff; width: 60px; height: 60px; border-radius: 50%; display: inline-block; font-size: 28px; color: #1a88e0; line-height: 60px; transition: box-shadow 0.3s ease;}
+.header_icon li a {position: relative; background-color: #fff; width: 60px; height: 60px; border-radius: 50%; display: inline-block; font-size: 28px; color: #946b9c; line-height: 60px; transition: box-shadow 0.3s ease;}
 .header_icon li a span {
     position: absolute; left: 50%; top: -40px; transform: translateX(-50%);
     font-size: 12px; line-height: 1.6; background: #77b5e6; padding: 3px 9px;

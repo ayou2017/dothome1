@@ -1,0 +1,29 @@
+@font-face {
+    font-family: OreloTrial-SemiWide;
+    src: local(OreloTrial-SemiWideUltraLightItalic),
+    url(../assets/Orelo-SemiWideUltraLightItalic.otf) format("opentype"),
+    url(../assets/orelo-semiwideultralightitalic-webfont.woff2) format('woff2'),
+    url(../assets/orelo-semiwideultralightitalic-webfont.woff) format('woff');
+    font-weight: 200;
+    font-style: italic;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: OreloTrial-SemiWide;
+    src: local(OreloTrial-SemiWideLight),
+    url(../assets/Orelo-SemiWideLight.otf) format("opentype"),
+    url(../assets/orelo-semiwidelight-webfont.woff2) format('woff2'),
+    url(../assets/orelo-semiwidelight-webfont.woff) format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+@font-face{
+    font-family:'Daehan';
+    font-style:normal;
+    font-weight:400;
+    src:url('//cdn.jsdelivr.net/korean-webfonts/1/corps/yoon/Daehan/DaehanR.woff2') format('woff2'),
+        url('//cdn.jsdelivr.net/korean-webfonts/1/corps/yoon/Daehan/DaehanR.woff') format('woff');
+}

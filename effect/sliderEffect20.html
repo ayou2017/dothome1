@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image slider</title>
+    
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@4">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         
         * {margin: 0; padding: 0; box-sizing: border-box;}
@@ -25,6 +26,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+
         }
         #header .nav {
             flex: 1 1 30%;
@@ -55,13 +57,16 @@
             text-align: right;
             padding-right: 90px;
         }
+        #header .hamNav {
+            flex: 0 0 30%;
+            text-align: right;
+        }
         #header .hamNav .ham {
+            position: relative;
             display: inline-block;
             width: 50px; height: 50px;
-            position: relative;
             transition: all 0.5s ease;
         }
-        
         #header .hamNav .ham span {
             display: block;
             position: absolute;
@@ -89,11 +94,14 @@
             transform: rotate(135deg);
         }
         #header .hamNav .ham.active span::before {
-            top: 0; transform: translateX(100%) rotate(-90deg);
+            top: 0;
+            transform: translateX(100%) rotate(-90deg);
         }
         #header .hamNav .ham.active span::after {
-            bottom: 0; transform: translateX(100%) rotate(-90deg);
+            bottom: 0;
+            transform: translateX(-100%) rotate(-90deg);    
         }
+
         /* slider*/
         .slider-wrap {
             position: relative;
@@ -134,7 +142,6 @@
         }
 
         /* slider */
-        .slider {}
         .slider .slider_text {
             position: absolute;
             left: 50%; top: 50%;
@@ -148,22 +155,47 @@
             text-transform: uppercase;
             letter-spacing: 0.2em;
             font-weight: 700;
+            overflow: hidden;
         }
         .slider .slider_img {
             position: absolute;
             left: 50%; top: 50%;
             transform: translate(-50%, -50%);
             width: 100%;
-
         }
         .slider .slider_img img {
             max-width: 500px;
             width: 100%;
             display: block;
-            margin: 0 auto;
-            
+            margin: 0 auto; /*이미지 가운데 정렬*/
         }
-
+        .slider .slider_count {
+            position: absolute;
+            left: 130px; top: 100px;
+            font-size: 90px;
+            font-style: italic;
+            font-family: 'playfair Display';
+        }
+        .slider .slider_count::before {
+            content: '';
+            width: 110%; height: 80%;
+            background: #fff;
+            position: absolute;
+            left: 0; top: 30px;
+        }
+        .slider .slider_count span {
+            position: relative;
+        }
+        .slider .slider_count span:first-child{
+            margin-right: 76px;
+        }
+        .slider .slider_count span:first-child::before {
+            content: '';
+            position: absolute;
+            right: -80px; bottom: 45px;
+            width: 60px; height: 1px;
+            background: #000;
+        }
 
         /* slider-nav */
         .slider-nav a {
@@ -182,8 +214,7 @@
             left: 0;
         }
         .slider-nav a.prev svg {
-            left: 0;
-            bottom: 40px;
+            left: 0; bottom: 40px;
             margin: 45px 0 0 40px;
             transform: rotate(45deg);
         }
@@ -191,14 +222,13 @@
             right: 0;
         }
         .slider-nav a.next svg {
-            right: 0;
-            bottom: 40px;
-            margin: 40px 50px 0 40px;
+            right: 0; bottom: 40px;
+            margin: 40px 45px 0 40px;
             transform: rotate(-135deg);
         }
 
-        /* .slider-page */
-        .slider-page {
+        /* .slider-dot */
+        .slider-dot {
             position: fixed;
             left: 50%;
             transform: translateX(-50%);
@@ -209,7 +239,7 @@
             z-index: 1000;
             text-align: center;
         }
-        .slider-page a {
+        .slider-dot a {
             display: inline-block;
             width: 10px; height: 10px;
             line-height: 9px;
@@ -223,14 +253,67 @@
             text-indent: -9999px;
             margin: 50px 15px;
         }
-        .slider-page a.active {
+        .slider-dot a.active {
             border: 0;
             color: #333;
             text-indent: 0px;
         }
 
+        /* slider Animation */
+        .slider .slider_text span {
+            display: inline-block;
+            transform: translate(0px, 200px) /*rotate(-60deg)*/;
+            transition: all 0.8s cubic-bezier(0, 0.35, 0, 1.02);
+        }
+        .slider .slider_img img {
+            transform: scale(0);
+            transition: all 0.8s cubic-bezier(0, 0.35, 0, 1.02);
+        }
+        .slider .slider_count {
+            opacity: 0;
+        }
+        .slider .slider_count::before {
+            transform-origin: left;
+            background: #fff;
+            z-index: 10;
+        }
 
 
+        .slider.active .slider_count {
+            animation: revealText 0.1s 1.3s forwards;
+        }
+        .slider.active .slider_count::before {
+            animation: reveal 0.7s 1s ease forwards;
+        }
+        @keyframes reveal {
+            0% { transform: scaleX(0); transform-origin: left;}
+            40% { transform: scaleX(1); transform-origin: left;}
+            61% { transform: scaleX(1); transform-origin: right;}
+            100% { transform: scaleX(0); transform-origin: right;}
+        }
+        @keyframes revealText {
+            0% {opacity: 0;}
+            100% {opacity: 1;}
+        }
+        .slider.active .slider_img img {
+            transform: scale(1.4);
+        }
+        .slider.active .slider_text span {
+            transform: translate(0, 0) /*rotate(0deg)*/;
+        }
+        .slider.active .slider_text span:nth-child(1){transition-delay: 0.05s;}
+        .slider.active .slider_text span:nth-child(2){transition-delay: 0.10s;}
+        .slider.active .slider_text span:nth-child(3){transition-delay: 0.15s;}
+        .slider.active .slider_text span:nth-child(4){transition-delay: 0.20s;}
+        .slider.active .slider_text span:nth-child(5){transition-delay: 0.25s;}
+        .slider.active .slider_text span:nth-child(6){transition-delay: 0.30s;}
+        .slider.active .slider_text span:nth-child(7){transition-delay: 0.35s;}
+        .slider.active .slider_text span:nth-child(8){transition-delay: 0.40s;}
+        .slider.active .slider_text span:nth-child(9){transition-delay: 0.45s;}
+        .slider.active .slider_text span:nth-child(10){transition-delay: 0.50s;}
+        .slider.active .slider_text span:nth-child(11){transition-delay: 0.50s;}
+        /* 제이쿼리로 할 수 있지만 버벅거림*/
+        
     </style>
 </head>
 <body>
@@ -246,48 +329,85 @@
         </nav>
         <h1>portfolio</h1>
         <div class="hamNav">
-            <a href="#" class="ham active"><span></span></a>
+            <a href="#" class="ham"><span></span></a>
         </div>
     </header>
     <!-- //header -->
     <main>
         <div class="slider-wrap">
             <div class="slider-img">
-                <div class="slider">
-                    <div class="slider_text">portfolio</div>
+                <div class="slider" data-name="포트폴리오">
+                    <div class="slider_text split">portfolio</div>
                     <figure class="slider_img">
-                        <img src="img/silder_1.png" alt="이미지1">
+                        <img src="img/silder_1.png" alt="포트폴리오">
                     </figure>
+                    <div class="slider_count">
+                        <span class="sliderNumber">01</span>
+                        <span class="sliderTotal">01</span>
+                    </div>
                 </div>
                 <div class="slider">
+                    <div class="slider_text split">webstandard</div>
                     <figure class="slider_img">
-                        <img src="img/silder_2.png" alt="이미지2">
+                        <img src="img/silder_2.png" alt="웹표준">
                     </figure>
+                    <div class="slider_count">
+                        <span class="sliderNumber">01</span>
+                        <span class="sliderTotal">01</span>
+                    </div>
                 </div>
                 <div class="slider">
+                    <div class="slider_text split">responsive</div>
                     <figure class="slider_img">
-                        <img src="img/silder_3.png" alt="이미지3">
+                        <img src="img/silder_3.png" alt="반응형">
                     </figure>
+                    <div class="slider_count">
+                        <span class="sliderNumber">01</span>
+                        <span class="sliderTotal">01</span>
+                    </div>
                 </div>
                 <div class="slider">
+                    <div class="slider_text split">responsive</div>
                     <figure class="slider_img">
                         <img src="img/silder_4.png" alt="이미지4">
                     </figure>
+                    <div class="slider_count">
+                        <span class="sliderNumber">01</span>
+                        <span class="sliderTotal">01</span>
+                    </div>
                 </div>
                 <div class="slider">
+                    <div class="slider_text split">responsive</div>
                     <figure class="slider_img">
                         <img src="img/silder_1.png" alt="이미지5">
                     </figure>
+                    <div class="slider_count">
+                        <span class="sliderNumber">01</span>
+                        <span class="sliderTotal">01</span>
+                    </div>
                 </div>
                 <div class="slider">
+                    <div class="slider_text split">responsive</div>
                     <figure class="slider_img">
                         <img src="img/silder_2.png" alt="이미지6">
                     </figure>
+                    <div class="slider_count">
+                        <span class="sliderNumber">01</span>
+                        <span class="sliderTotal">01</span>
+                    </div>
                 </div>
-                <div class="slider"><figure class="slider_img">
-                    <img src="img/silder_3.png" alt="이미지7">
-                </figure></div>
+                <div class="slider">
+                    <div class="slider_text split">responsive</div>
+                    <figure class="slider_img">
+                        <img src="img/silder_3.png" alt="이미지7">
+                    </figure>
+                    <div class="slider_count">
+                        <span class="sliderNumber">01</span>
+                        <span class="sliderTotal">01</span>
+                    </div>
+                </div>
             </div>
+            <!-- //silder-img -->
             <div class="slider-nav">
                 <a href="#" class="prev">
                     <svg viewBox="-1 -2 18 18">
@@ -306,17 +426,128 @@
                     </svg>
                 </a>
             </div>
-            <div class="slider-page">
-                <a href="#" class="active"></a>
-                <a href="#"></a>
-                <a href="#"></a>
-                <a href="#"></a>
-                <a href="#"></a>
-                <a href="#"></a>
-                <a href="#"></a>
+            <!-- //slider-nav -->
+            <div class="slider-dot">
+                <!-- <a href="#" class="active">01</a>
+                <a href="#">02</a>
+                <a href="#">03</a>
+                <a href="#">04</a>
+                <a href="#">05</a>
+                <a href="#">06</a>
+                <a href="#">07</a> -->
             </div>
+            <!-- //slider-dot -->
         </div>
     </main>
     <!-- //main -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <script>
+        var sliderWrap = $(".slider-wrap"),
+            sliderImg = $(".slider-img"),
+            slider = $(".slider"),
+            sliderNav = $(".slider-nav"),
+            sliderDot = $(".slider-dot"),
+            sliderCount = $(".slider_count"),
+            sliderNumber = sliderCount.find(".sliderNumber"),
+            sliderTotal = sliderCount.find(".sliderTotal");
+
+        var dotHTML = "",
+            currentIndex = 0,
+            duration = 1000,
+            easing = "easeOutExpo",
+            sliderLength = slider.length,
+            sliderTimer = "",
+            interval = 3000;
+
+        //이미지 위치 설정 forEach, map, reduce,
+        slider.each(function(index){
+            $(this).css({"left": 100*index+"%"});
+            // console.log(index);
+            // console.log(element);
+
+            //닷 메뉴 설정(참고-07-jQ)
+            dotHTML += "<a href='#'>0"+(index+1)+"</a>";
+        });
+        sliderDot.html(dotHTML);
+
+        //이미지 움직이기
+        function gotoSlider(num){
+            sliderImg.stop().animate({"left" : num*-100+"%"}, duration, easing);
+            currentIndex = num;
+            //stop(false, false)-다음으로 넘어감
+
+            //마지막 이미지
+            // if(currentIndex == slideCount -1){
+            //     alert("마지막 이미지입니다.");
+            // }
+            
+            // slider.removeClass("active").eq(currentIndex).addClass("active");
+            // sliderDot.find("a").removeClass("active").eq(currentIndex).addClass("active");
+            // 소스 깔끔하게->활성화표시하기
+            gotoActive();
+        }
+
+        //활성화 표시하기
+        function gotoActive(){
+            slider.removeClass("active").eq(currentIndex).addClass("active");
+            sliderDot.find("a").removeClass("active").eq(currentIndex).addClass("active");
+            sliderNumber.text("0"+(currentIndex+1));
+            sliderTotal.text("0"+sliderLength);
+        }
+
+        //버튼 클릭하기
+        sliderNav.on("click","a",function(e){
+            e.preventDefault();
+
+            var nextIndex = (currentIndex + 1) % sliderLength;
+            var prevIndex = (currentIndex - 1) % sliderLength;
+            if(currentIndex == 0) prevIndex = sliderLength - 1;
+
+            if( $(this).hasClass("prev") ){
+                gotoSlider(prevIndex);
+            } else {
+                gotoSlider(nextIndex);
+            }
+        });
+
+        //닷 버튼 클릭하기
+        sliderDot.on("click","a",function(e){
+            e.preventDefault();
+            if( !$(this).hasClass("active") ){
+                gotoSlider( $(this).index() );
+            }
+        });
+
+        //자동플레이
+        function startTimer(){
+            sliderTimer = setInterval(function(){
+                var intervalNum = (currentIndex + 1) % sliderLength;
+                gotoSlider(intervalNum);
+            }, interval);
+        }
+        //setInterval<->stopTimer
+        function stopTimer(){
+            clearInterval(sliderTimer);
+        }
+        
+        sliderWrap.on({mouseenter: stopTimer, mouseleave: startTimer});
+
+        //글씨 쪼개기
+        $(".split").each(function(){
+            var text = $(this).text();
+            let split = text.split("").join("</span><span aria-hidden='true'>");
+                split = "<span aria-hidden='true'>"+ split +"</span>";
+            $(this).html(split).attr("aria-label", text);
+        });
+
+        //바로 시작하기
+        gotoSlider(currentIndex);
+        startTimer();
+
+        
+
+    </script>
 </body>
 </html>

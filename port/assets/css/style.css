@@ -23,23 +23,12 @@ body {
     padding-left: 60px;
     position: relative;
 }
-.header_menu ul>li::after {
+.header_menu ul li.menubar::after {
     content: "";
     position: absolute;
     width: 10px; height: 1px;
     bottom: 8px; right: -38px;
     background-color: #888;
-}
-.header_menu ul li:last-child::after {
-    content: "";
-    position: absolute;
-    width: 30px; height: 30px;
-    bottom: -30px; right: 36px;
-    background-image: url(../img/darkmode.png) bottom/15px no-repeat;;
-    
-}
-.header_menu .darkmode {
-
 }
 /* main */
 #container {
@@ -82,37 +71,38 @@ body {
 
 .home_me {
     padding-bottom: 80px;
+    font-family:'Daehan';
 }
-.home_txtmain {
+.home_me .home_txtmain {
     padding: 120px;
-    font-size: 70px;
+    font-size: 65px;
 }
 
-.home_txt3_1 {
+.home_txt1 {
     width: 350px;
-    padding: 0 250px;
+    padding: 0 200px;
     float: left;
     padding-bottom: 200px;
 }
-.home_txt3_1 p {
+.home_txt1 p {
     padding-top: 40px;
 }
-.home_txt3_2{
+.home_txt2 {
     width: 300px;
-    padding: 0 50px;
+    padding-right: 80px;
     float: left;
     padding-bottom: 200px;
 }
-.home_txt3_2 p {
+.home_txt2 p {
    padding-top: 40px;
 }
-.home_txt3_3 {
+.home_txt3 {
     width: 300px;
-    padding: 0 50px;
+    padding: 0 80px;
     float: left;
     padding-bottom: 200px;
 }
-.home_txt3_3 p {
+.home_txt3 p {
     padding-top: 40px;
 }
 .footer {

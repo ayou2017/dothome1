@@ -147,6 +147,10 @@
 }
 .main-nav .nav-img>img {
     padding: 0 5px;
+
+}
+.main-nav .nav-img>img {
+    padding: 0 10px;
 }
 .main-nav p {
     padding: 0 240px;

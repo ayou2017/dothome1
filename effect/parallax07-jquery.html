@@ -487,7 +487,9 @@
             });
 
             function updateProgress(){
-                
+                let target = (imgLoaded/imgTotal)*100;
+                imgCurrent += (target-imgCurrent)*0.1;
+                $progressText.text(imgCurrent)
             }
             
         }

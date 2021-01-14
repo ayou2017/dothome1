@@ -89,12 +89,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script>
         const $menu = document.querySelector(".menu");
-        const $menuItme = document.querySelectorAll(".menu-itme");
+        const $menuItem = document.querySelectorAll(".menu-itme");
         /*선택자로 씀 = $*/
 
         let menuHeight = $menu.clientHeight;
-        let menuItmeHeight = $menuItme[0].clientHeight;/*배열로 첫번째*/
-        let wrapHeight = $menuItme.length * menuItmeHeight; /*전체 크기*/
+        let menuItemHeight = $menuItem[0].clientHeight;/*배열로 첫번째*/
+        let wrapHeight = $menuItem.length * menuItemHeight; /*전체 크기*/
         let y = 0;
         let scrollY = 0;
 
@@ -107,13 +107,13 @@
         }
 
         const dispose = (scroll) => {
-            gsap.set($menuItme, {
-                y: (index) => {
-                    return index * menuItmeHeight +scroll/*스크롤값 연동 - *//*계속 스크롤 값이 늘어남*/
+            gsap.set($menuItem, {
+                y: (index)=>{
+                    return index * menuItemHeight + scroll;
                 },
                 modifiers: {
-                    y:(y, target) => {
-                        const s = gsap.utils.wrap(-menuItmeHeight, wrapHeight-wrapHeight, parseFloat(y) )
+                    y: (y, target) => {
+                        const s = gsap.utils.wrap(-menuItemHeight, wrapHeight-menuItemHeight, parseFloat(y))
                         return `${s}px`
                     }
                 }

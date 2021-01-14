@@ -472,26 +472,35 @@
     <script src="http://flairgale.cafe24.com/para/js/imagesloaded.pkgd.min.js"></script>
     <script>
         function loading() {
-            let $progress = $(".progress");
-            let $progressText = $(".progress-text");
-
+            let $progress = $(".progress"),
+                $progressText = $(".progress-text");
             let imgLoad = imagesLoaded("body"),
-                imgToalt = imgLoad.images.length,
+                imgTotal = imgLoad.images.length,
                 imgLoaded = 0,
                 imgCurrent = 0,
-                pregressTimmer = setInterval(updateProgress, 1000/60);
-            
-            imgLoad.on("progress", function (){
+                progressTimer = setInterval(updateProgress, 1000/60);
+            imgLoad.on("progress", function () {
                 imgLoaded++;
-                
             });
-
             function updateProgress(){
-                let target = (imgLoaded/imgTotal)*100;
-                imgCurrent += (target-imgCurrent)*0.1;
-                $progressText.text(imgCurrent)
+                let target = ( imgLoaded/imgTotal ) * 100;
+                imgCurrent += (target - imgCurrent) * 0.1;
+                $progressText.text( parseInt(imgCurrent) );
+                if( imgCurrent >= 100 ){
+                    clearInterval(progressTimer);
+                    $("body").addClass("active");
+                    gsap.to($progress, {
+                        duration: 1, 
+                        top: "-110%",
+                        ease: "power4.out"
+                    });
+                    //메인 애니메이션
+                    let tl = gasp.timeline();
+                }
+                if( imgCurrent > 99 ){
+                    imgCurrent = 100;
+                }
             }
-            
         }
         loading();
 

@@ -1,32 +1,34 @@
 /* layout */
-#contents {}
-#section1 {
-    background: #57514C;
-}
-#section2 {
-    
-}
-#section3 {
+#section1 {position: relative; z-index: 9000; background: #57514C;}
+#section2 {position: relative; z-index: 8000; background: #f6f4f2;}
+#section3 {position: relative; z-index: 7000; background: #f6f4f2; height: 900vh;}
+#section4 {position: relative; z-index: 9000; background: #f6f4f2;}
+#section5 {position: relative; z-index: 9000; background: #f6f4f2; height: 900vh;}
+#section6 {position: relative; z-index: 9000; background: #f6f4f2;}
+#section7 {position: relative; z-index: 9000; background: #f6f4f2; height: 900vh;}
+#section8 {position: relative; z-index: 9000; background: #f6f4f2;}
+#section9 {position: relative; z-index: 9000; background: #f6f4f2; height: 900vh;}
 
-}
-#section4 {
+.sec1 {position: relative; width: 100%;}
+.sec2 {position: relative; width: 100%;}
+.sec3 {position: fixed; left: 0; top: 0; width: 100%;}
+.sec4 {position: relative; width: 100%;}
+.sec5 {position: relative; width: 100%;}
+.sec6 {position: relative; width: 100%;}
+.sec7 {position: relative; width: 100%;}
+.sec8 {position: relative; width: 100%;}
+.sec9 {position: relative; width: 100%;}
 
+.sec3-wrap {overflow: hidden; width: 500vw;}
+.sec3-wrap > div {
+    float: left;
+    width: 100vw; height: 100vh;
 }
-#section5 {
-
-}
-#section6 {
-
-}
-#section7 {
-
-}
-#section8 {
-
-}
-#section9 {
-
-}
+.sec3-wrap > div:nth-child(1) {}
+.sec3-wrap > div:nth-child(2) {background: #888;}
+.sec3-wrap > div:nth-child(3) {background: #777;}
+.sec3-wrap > div:nth-child(4) {background: #666;}
+.sec3-wrap > div:nth-child(5) {background: #555;}
 
 /* header */
 #header {
@@ -202,39 +204,64 @@
     top: 5px; left: 5px;
     border: 1px solid #929292;
 }
-.siteWeb {
-    padding: 15vh 0;
-}
+
 .siteWeb .mainTitle {
-    padding-top: 100px;
+    padding-top: 300px;
     padding-left: 60px;
     font-size: 150px;
     line-height: 150px;
 }
-.siteWeb .mainTitle .mainTitle1 {
+
+/* sec3 */
+.sec3 .mainTitle .mainTitle1 {
+    font-family: 'OreloTrial-SemiWideLight';
+    text-transform: uppercase;
+    padding-left: 300px;
+    color: #57514c;
+    position: relative;
+}
+.sec3 .mainTitle .mainTitle1::after {
+    content: '';
+    width: 25px; height: 220px;
+    position: absolute;
+    top: 50px; right: 300px;
+    border-top: 1px solid #888;
+    border-right: 1px solid #888;
+}
+.sec3 .mainTitle .mainTitle2 {
+    font-family: 'OreloTrial-SemiWideUltraLightItalic';
+    text-align: center;
+    padding-right: 100px;
+}
+
+/* sec5 */
+.sec5 .mainTitle .mainTitle1 {
     font-family: 'OreloTrial-SemiWideLight';
     text-transform: uppercase;
     padding-left: 100px;
     color: #57514c;
     position: relative;
 }
-.siteWeb .mainTitle .mainTitle1::after {
+.sec5 .mainTitle .mainTitle1::after {
     content: '';
     width: 25px; height: 220px;
     position: absolute;
     top: 50px; right: 100px;
-    border-top: 1px solid #57514c;
-    border-right: 1px solid #57514c;
+    border-top: 1px solid #888;
+    border-right: 1px solid #888;
 }
-.siteWeb .mainTitle .mainTitle2 {
+.sec5 .mainTitle .mainTitle2 {
     font-family: 'OreloTrial-SemiWideUltraLightItalic';
-    text-align: right;
-    padding-right: 300px;
-    color: #898581;
+    text-align: center;
+    padding-left: 200px;
 }
 
 /* sec7 */
 .sec7 .mainTitle .mainTitle1 {
+    font-family: 'OreloTrial-SemiWideLight';
+    text-transform: uppercase;
+    padding-left: 100px;
+    color: #57514c;
     position: relative;
 }
 .sec7 .mainTitle .mainTitle1::after {
@@ -250,8 +277,13 @@
     text-align: center;
     padding-left: 200px;
 }
+
 /* sec9 */
 .sec9 .mainTitle .mainTitle1 {
+    font-family: 'OreloTrial-SemiWideLight';
+    text-transform: uppercase;
+    padding-left: 100px;
+    color: #57514c;
     position: relative;
 }
 .sec9 .mainTitle .mainTitle1::after {
@@ -268,15 +300,8 @@
     padding-left: 80px;
     padding-bottom: 200px;
 }
-/* #section9 {position: relative; z-index: 4000; background: #111; height: 900vh;}
-.sec9 {position: fixed; left: 0; top: 0; width: 100%; height: 100vh;}
-.sec9-wrap {overflow: hidden; width: 500vw;}
-.sec9-wrap > div {
-    float: left;
-    width: 100vw; height: 100vh;
-}
-.sec9-wrap > div:nth-child(1) {background: #999;}
-.sec9-wrap > div:nth-child(2) {background: #888;}
-.sec9-wrap > div:nth-child(3) {background: #777;}
-.sec9-wrap > div:nth-child(4) {background: #666;}
-.sec9-wrap > div:nth-child(5) {background: #555;} */
+
+
+
+
+

@@ -102,7 +102,7 @@
 }
 .sub .about-text2 {
     position: absolute;
-    right: 10%; top: 50%;
+    right: 5%; top: 50%;
     width: 30%;
     font-family: 'Daehan';
     font-size: 17px;
@@ -187,11 +187,14 @@
 }
 
 .about-title {
+    font-family: 'OreloTrial-SemiWideLight';
+    font-weight: lighter;
+    text-transform: uppercase;
     padding: 60px 0;
     padding-left: 40px;
+    color: #57524c;
     font-size: 140px;
-    font-family: 'OreloTrial-SemiWideLight';
-    text-transform: uppercase;
+    
 }
 .about-sub {
     width: 100%;

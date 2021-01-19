@@ -1,0 +1,282 @@
+/* layout */
+#contents {}
+#section1 {
+    background: #57514C;
+}
+#section2 {
+    
+}
+#section3 {
+
+}
+#section4 {
+
+}
+#section5 {
+
+}
+#section6 {
+
+}
+#section7 {
+
+}
+#section8 {
+
+}
+#section9 {
+
+}
+
+/* header */
+#header {
+    position: fixed;
+    left: 0; top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'OreloTrial-SemiWideLight';
+    color: #888;
+    text-transform: uppercase;
+    z-index: 1000;
+}
+#header h1 {
+    padding: 20px 30px;
+    letter-spacing: 2px;
+}
+#header .nav {
+    padding: 20px 40px;
+}
+#header .nav li {
+    display: inline;
+}
+#header .nav li a {
+    display: inline-block;
+    padding: 10px;
+    font-size: 16px;
+    letter-spacing: 0.7px;
+}
+.header ul li.menubar::after {
+    content: "";
+    position: absolute;
+    width: 10px; height: 1px;
+    bottom: 8px; right: -38px;
+    background-color: #888;
+}
+
+/* container */
+.container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    
+}
+
+/* sec1 */
+.sec1 {
+    padding: 10vh 0;
+    position: relative;
+    color: #fff;
+}
+.sec1 .siteimg_t {
+    position: absolute;
+    top: 0; left: -260px;
+}
+.sec1 h1 {
+    font-family: 'OreloTrial-SemiWideLight';
+    font-weight: lighter;
+    font-size: 180px;
+    position: absolute;
+    top: 80; left: -110px;
+}
+.sec1 h1::after {
+    content: "";
+    width: 200px; height: 200px;
+    position: absolute;
+    top: 280px; right: -500px;
+    border-top: 1px solid #fff;
+    border-right: 1px solid #fff;
+}
+.sec1 h1 span {
+    font-weight: lighter;
+}
+.sec1 .siteimg_m {
+    width: 70%;
+    padding-top: 60px;
+    padding-left: 510px;
+}
+.title_b {
+    font-family: 'Lato';
+    font-size: 16px;
+    text-transform: uppercase;
+    flex: 1 1 33%;
+    position: absolute;
+    top: 880px; left: -80px;
+}
+.title_b li {
+    display: inline;
+}
+.title_b li:first-child {
+    padding-right: 580px;
+}
+.title_b li:nth-child(2) {
+    padding-right: 460px;
+}
+.title_b li:last-child {
+    padding-right: 0;
+}
+.title_b li:last-child::after {
+    content: "";
+    position: absolute;
+    width: 25px; height: 1px;
+    top: 12px; right: -50px;
+    background-color: #fff;
+}
+.title_b li span {
+    padding-right: 80px;
+    position: relative;
+}
+.title_b li span::after {
+    content: "";
+    width: 25px; height: 1px;
+    position: absolute;
+    top: 10px; left: 65px;
+    background: #fff; 
+}
+
+/*공통부분*/
+.siteSec {
+    padding: 30vh 0;
+}
+.siteCont {
+    padding-left: 40px;
+    font-family: 'OreloTrial-SemiWideLight';
+    font-weight: lighter;
+}
+.siteTitle {
+    font-size: 80px;
+    line-height: 80px;
+    color: #57514c;
+}
+.siteTitle span {
+    letter-spacing: 5px;
+}
+.siteDesc {
+    font-family: 'Daehan';
+    width: 27%;
+    font-size: 20px;
+    text-align: justify;
+    padding-top: 60px;
+    color: #57514c;
+    float: left;
+}
+.siteBox {
+    font-size: 60px;
+    text-transform: uppercase;
+    float: left;
+    padding: 60px 0 30px 300px;
+}
+.siteBox .siteView {
+    margin-right: 40px;
+    padding: 14px 54px;
+    border: 1px solid #929292;
+    position: relative;
+}
+.siteBox .siteView::after {
+    content: "";
+    width: 264px; height: 100px;
+    position: absolute;
+    top: 5px; left: 5px;
+    border: 1px solid #929292;
+}
+.siteBox .siteFigma {
+    padding: 14px 45px;
+    border: 1px solid #929292;
+    position: relative;
+}
+.siteBox .siteFigma::after {
+    content: "";
+    width: 264px; height: 100px;
+    position: absolute;
+    top: 5px; left: 5px;
+    border: 1px solid #929292;
+}
+.siteWeb {
+    padding: 15vh 0;
+}
+.siteWeb .mainTitle {
+    padding-top: 100px;
+    padding-left: 60px;
+    font-size: 150px;
+    line-height: 150px;
+}
+.siteWeb .mainTitle .mainTitle1 {
+    font-family: 'OreloTrial-SemiWideLight';
+    text-transform: uppercase;
+    padding-left: 100px;
+    color: #57514c;
+    position: relative;
+}
+.siteWeb .mainTitle .mainTitle1::after {
+    content: '';
+    width: 25px; height: 220px;
+    position: absolute;
+    top: 50px; right: 100px;
+    border-top: 1px solid #57514c;
+    border-right: 1px solid #57514c;
+}
+.siteWeb .mainTitle .mainTitle2 {
+    font-family: 'OreloTrial-SemiWideUltraLightItalic';
+    text-align: right;
+    padding-right: 300px;
+    color: #898581;
+}
+
+/* sec7 */
+.sec7 .mainTitle .mainTitle1 {
+    position: relative;
+}
+.sec7 .mainTitle .mainTitle1::after {
+    content: '';
+    width: 25px; height: 220px;
+    position: absolute;
+    top: 50px; right: 300px;
+    border-top: 1px solid #888;
+    border-right: 1px solid #888;
+}
+.sec7 .mainTitle .mainTitle2 {
+    font-family: 'OreloTrial-SemiWideUltraLightItalic';
+    text-align: center;
+    padding-left: 200px;
+}
+/* sec9 */
+.sec9 .mainTitle .mainTitle1 {
+    position: relative;
+}
+.sec9 .mainTitle .mainTitle1::after {
+    content: '';
+    width: 25px; height: 220px;
+    position: absolute;
+    top: 50px; right: 400px;
+    border-top: 1px solid #888;
+    border-right: 1px solid #888;
+}
+.sec9 .mainTitle .mainTitle2 {
+    font-family: 'OreloTrial-SemiWideUltraLightItalic';
+    text-align: center;
+    padding-left: 80px;
+    padding-bottom: 200px;
+}
+/* #section9 {position: relative; z-index: 4000; background: #111; height: 900vh;}
+.sec9 {position: fixed; left: 0; top: 0; width: 100%; height: 100vh;}
+.sec9-wrap {overflow: hidden; width: 500vw;}
+.sec9-wrap > div {
+    float: left;
+    width: 100vw; height: 100vh;
+}
+.sec9-wrap > div:nth-child(1) {background: #999;}
+.sec9-wrap > div:nth-child(2) {background: #888;}
+.sec9-wrap > div:nth-child(3) {background: #777;}
+.sec9-wrap > div:nth-child(4) {background: #666;}
+.sec9-wrap > div:nth-child(5) {background: #555;} */

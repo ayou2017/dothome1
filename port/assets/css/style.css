@@ -1,6 +1,5 @@
 /* layout */
 #contents {
-
 }
 #section1 {
     background: #F6F4F1;
@@ -30,6 +29,7 @@
 }
 #header h1 {
     padding: 20px 30px;
+    letter-spacing: 2px;
 }
 #header .nav {
     padding: 20px 40px;
@@ -40,7 +40,8 @@
 #header .nav li a {
     display: inline-block;
     padding: 10px;
-    font-size: 20px;
+    font-size: 16px;
+    letter-spacing: 0.7px;
 }
 .header ul li.menubar::after {
     content: "";
@@ -101,7 +102,7 @@
 }
 .sub .about-text2 {
     position: absolute;
-    right: 10%; top: 50%;
+    right: 5%; top: 50%;
     width: 30%;
     font-family: 'Daehan';
     font-size: 17px;
@@ -125,8 +126,18 @@
 }
 .main-nav .main-title {
     padding-bottom: 100px;
+    padding-left: 60px;
     font-size: 150px;
     color: #57524c;
+   
+}
+.main-nav .main-title .title1::after {
+    content: '';
+    width: 25px; height: 220px;
+    position: absolute;
+    top: 120px; right: 500px;
+    border-top: 1px solid #888;
+    border-right: 1px solid #888;
 
 }
 .main-nav .main-title .title1 {
@@ -134,6 +145,7 @@
     text-transform: uppercase;
     padding-left: 200px;
     margin-bottom: -40px;
+    position: relative;
     
 }
 .main-nav .main-title .title2 {
@@ -170,14 +182,19 @@
 
 /* sec3 */
 .sec3 {
-    padding: 10vh 0;
+    padding: 20vh 0;
     font-family: 'Daehan';
 }
-.about-main {
-    width: 90%;
-    padding-left: 60px;
-    padding-bottom: 50px;
-    font-size: 65px;
+
+.about-title {
+    font-family: 'OreloTrial-SemiWideLight';
+    font-weight: lighter;
+    text-transform: uppercase;
+    padding: 60px 0;
+    padding-left: 40px;
+    color: #57524c;
+    font-size: 140px;
+    
 }
 .about-sub {
     width: 100%;
@@ -185,24 +202,36 @@
     padding-top: 30px;
     font-size: 14px;
 }
+.about-sub>div{
+    width: 20%;
+    padding-left: 50px;
+}
+
+.about-sub .as-text1 img {
+    width: 100%; height: 210px;
+    object-fit: cover;
+}
 .about-sub .as-text1 {
-    width: 23%;
-    padding: 0 140px;
     float: left;
 }
 .about-sub .as-text2 {
-    width: 21%;
-    padding-right: 80px;
     float: left;
 }
 .about-sub .as-text3 {
-    width: 21%;
-    padding-right: 80px;
     float: left;
 }
-.about-sub div p {
-   padding-top: 40px;
+.about-sub .as-text4 {
+    float: left;
 }
+.about-sub div>p {
+    padding-top: 40px;
+    text-align: justify;
+}
+.about-sub .as-text1 p {
+    padding-bottom: 30px;
+   
+}
+
 
 /* sec4 */
 .sec4 {

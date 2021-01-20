@@ -1,67 +1,24 @@
 /* layout */
 #section1 {position: relative; z-index: 9000; background: #57514C;}
 #section2 {position: relative; z-index: 8000; background: #f6f4f2;}
-#section3 {position: relative; z-index: 4000; background: #f6f4f2; height: 900vh;}
+#section3 {position: relative; z-index: 7000; background: #f6f4f2; height: 1200vh;}
 #section4 {position: relative; z-index: 9000; background: #f6f4f2;}
-#section5 {position: relative; z-index: 3000; background: #f6f4f2; height: 900vh;}
+#section5 {position: relative; z-index: 9000; background: #f6f4f2; height: 900vh;}
 #section6 {position: relative; z-index: 9000; background: #f6f4f2;}
-#section7 {position: relative; z-index: 2000; background: #f6f4f2; height: 900vh;}
+#section7 {position: relative; z-index: 9000; background: #f6f4f2; height: 900vh;}
 #section8 {position: relative; z-index: 9000; background: #f6f4f2;}
-#section9 {position: relative; z-index: 1000; background: #f6f4f2; height: 900vh;}
+#section9 {position: relative; z-index: 9000; background: #f6f4f2; height: 900vh;}
+
 
 .sec1 {position: relative; width: 100%;}
 .sec2 {position: relative; width: 100%;}
 .sec3 {position: fixed; left: 0; top: 0; width: 100%;}
 .sec4 {position: relative; width: 100%;}
-.sec5 {position: fixed; left: 0; top: 0; width: 100%;}
+.sec5 {position: relative; width: 100%;}
 .sec6 {position: relative; width: 100%;}
-.sec7 {position: fixed; left: 0; top: 0; width: 100%;}
+.sec7 {position: relative; width: 100%;}
 .sec8 {position: relative; width: 100%;}
-.sec9 {position: fixed; left: 0; top: 0; width: 100%;}
-
-.sec3-wrap {overflow: hidden; width: 500vw;}
-.sec3-wrap > div {
-    float: left;
-    width: 100vw; height: 100vh;
-}
-.sec3-wrap > div:nth-child(1) {}
-.sec3-wrap > div:nth-child(2) {background: #888;}
-.sec3-wrap > div:nth-child(3) {background: #777;}
-.sec3-wrap > div:nth-child(4) {background: #666;}
-.sec3-wrap > div:nth-child(5) {background: #555;}
-
-.sec5-wrap {overflow: hidden; width: 500vw;}
-.sec5-wrap > div {
-    float: left;
-    width: 100vw; height: 100vh;
-}
-.sec5-wrap > div:nth-child(1) {}
-.sec5-wrap > div:nth-child(2) {background: #888;}
-.sec5-wrap > div:nth-child(3) {background: #777;}
-.sec5-wrap > div:nth-child(4) {background: #666;}
-.sec5-wrap > div:nth-child(5) {background: #555;}
-
-.sec7-wrap {overflow: hidden; width: 500vw;}
-.sec7-wrap > div {
-    float: left;
-    width: 100vw; height: 100vh;
-}
-.sec7-wrap > div:nth-child(1) {}
-.sec7-wrap > div:nth-child(2) {background: #888;}
-.sec7-wrap > div:nth-child(3) {background: #777;}
-.sec7-wrap > div:nth-child(4) {background: #666;}
-.sec7-wrap > div:nth-child(5) {background: #555;}
-
-.sec9-wrap {overflow: hidden; width: 500vw;}
-.sec9-wrap > div {
-    float: left;
-    width: 100vw; height: 100vh;
-}
-.sec9-wrap > div:nth-child(1) {}
-.sec9-wrap > div:nth-child(2) {background: #888;}
-.sec9-wrap > div:nth-child(3) {background: #777;}
-.sec9-wrap > div:nth-child(4) {background: #666;}
-.sec9-wrap > div:nth-child(5) {background: #555;}
+.sec9 {position: relative; width: 100%;}
 
 /* header */
 #header {
@@ -182,7 +139,7 @@
 
 /*공통부분*/
 .siteSec {
-    padding: 30vh 0;
+    padding: 50vh 0;
 }
 .siteCont {
     padding-left: 40px;
@@ -244,6 +201,7 @@
     line-height: 150px;
 }
 
+
 /* sec3 */
 .sec3 .mainTitle .mainTitle1 {
     font-family: 'OreloTrial-SemiWideLight';
@@ -256,7 +214,7 @@
     content: '';
     width: 25px; height: 220px;
     position: absolute;
-    top: 50px; right: 300px;
+    top: 50px; right: 400px;
     border-top: 1px solid #888;
     border-right: 1px solid #888;
 }
@@ -265,6 +223,127 @@
     text-align: center;
     padding-right: 100px;
 }
+.sec3 .siteMain {
+    padding: 210px 200px;
+    font-family: 'Daehan';
+    color: #fff;
+    position: relative;
+}
+.sec3 .siteMain .siteTxt {
+    width: 31%;
+}
+.sec3 .siteMain .siteTxt h1 {
+    font-size: 40px;
+    font-weight: lighter;
+    padding-bottom: 30px;
+}
+.sec3 .siteMain .siteTxt p {
+    font-size: 20px;
+    padding-bottom: 65px;
+}
+.sec3 .siteMain .siteTxt .siteTag {
+    font-size: 16px;
+    line-height: 30px;
+    padding-bottom: 55px;
+}
+.sec3 .siteMain .siteTxt span {
+    padding-right: 24px;
+}
+.sec3 .siteMain .siteTxt .siteBtn {
+    width: 100%; height: 50px;
+    background: #fff;
+    border-radius: 30px;
+    text-align: center;
+}
+.sec3 .siteMain .siteTxt .siteBtn a {
+    font-size: 24px;
+    line-height: 50px;
+    color: #eb5340;
+}
+
+.sec3-wrap {overflow: hidden; width: 1200vw;}
+.sec3-wrap > div {
+    float: left;
+    width: 80vw; height: 100vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.sec3-wrap > div:nth-child(1) {
+    width: 100vw;
+}
+.sec3-wrap > div:nth-child(2) {
+    background-image: url(../img/site/bg/webstandard.png);
+}
+.sec3-wrap > div:nth-child(3) {
+    background-image: url(../img/site/bg/webstandard_1.png);
+}
+.sec3-wrap > div:nth-child(4) {
+    background-image: url(../img/site/bg/webstandard_2.png);
+}
+.sec3-wrap > div:nth-child(5) {
+    background-image: url(../img/site/bg/webstandard_3.png);
+}
+.sec3-wrap > div:nth-child(6) {
+    background-image: url(../img/site/bg/webstandard_4.png);
+}
+
+.sec3 .siteMain .siteImg {
+    width: 30%;
+    position: absolute;
+    top: 220px; right: 200px;
+}
+.sec3 .siteSub {
+    padding: 200px;
+    font-family: 'Daehan';
+    color: #fff;
+    position: relative;
+}
+.sec3 .siteSub .siteTxt {
+    width: 31%;
+}
+.sec3 .siteSub .siteTxt h1 {
+    font-size: 40px;
+    font-weight: lighter;
+    padding-bottom: 30px;
+}
+.sec3 .siteSub .siteTxt p {
+    font-size: 20px;
+    padding-bottom: 65px;
+    width: 90%; height: 170px;
+}
+.sec3 .siteSub .siteTxt .siteBtn {
+    width: 100%; height: 60px;
+    background: #fff;
+    border-radius: 30px;
+    text-align: center;
+    margin-top: 100px;
+}
+.sec3 .siteSub .siteTxt .siteBtn a {
+    font-size: 24px;
+    line-height: 60px;
+    color: #eb5340;
+}
+.sec3 .siteSub .siteImg1 {
+    width: 30%;
+    position: absolute;
+    top: 250px; right: 200px;
+}
+.sec3 .siteSub .siteImg2 {
+    width: 30%;
+    position: absolute;
+    top: 220px; right: 200px;
+}
+.sec3 .siteSub .siteImg3 {
+    width: 26%;
+    position: absolute;
+    top: 220px; right: 200px;
+}
+.sec3 .siteSub .siteImg4 {
+    width: 30%;
+    position: absolute;
+    top: 320px; right: 200px;
+}
+
 
 /* sec5 */
 .sec5 .mainTitle .mainTitle1 {
@@ -278,7 +357,7 @@
     content: '';
     width: 25px; height: 220px;
     position: absolute;
-    top: 50px; right: 300px;
+    top: 50px; right: 100px;
     border-top: 1px solid #888;
     border-right: 1px solid #888;
 }
@@ -287,6 +366,7 @@
     text-align: center;
     padding-left: 200px;
 }
+
 
 /* sec7 */
 .sec7 .mainTitle .mainTitle1 {

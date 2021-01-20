@@ -80,6 +80,10 @@
     font-family: 'OreloTrial-SemiWideUltraLightItalic';
     text-align: left;
 }
+.main-text .mt2 {
+    position: relative;
+}
+
 .main-text > div:nth-child(3) {
     text-transform: capitalize;
     text-align: right;

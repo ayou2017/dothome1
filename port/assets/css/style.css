@@ -157,13 +157,10 @@
     padding: 20px 50px;
     
 }
-.main-nav .nav-img>img {
-    padding: 0 5px;
-
-}
-.main-nav .nav-img>img {
+.main-nav .nav-img a>img {
     padding: 0 10px;
 }
+
 .main-nav p {
     padding: 0 240px;
     font-family: 'Daehan';
@@ -177,6 +174,12 @@
     width: 25px; height: 1px;
     bottom: 10px; left: 360px;
     background-color: #525252; 
+}
+.main-nav .home-slide {
+    cursor: pointer;
+    height: 100%;
+    position: relative;
+    transform: translate3d(0,200%,0);
 }
 
 

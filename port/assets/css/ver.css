@@ -3,11 +3,11 @@
 #section2 {position: relative; z-index: 8000; background: #f6f4f2;}
 #section3 {position: relative; z-index: 7000; background: #f6f4f2; height: 1200vh;}
 #section4 {position: relative; z-index: 9000; background: #f6f4f2;}
-#section5 {position: relative; z-index: 9000; background: #f6f4f2; height: 900vh;}
+#section5 {position: relative; z-index: 9000; background: #f6f4f2;}
 #section6 {position: relative; z-index: 9000; background: #f6f4f2;}
-#section7 {position: relative; z-index: 9000; background: #f6f4f2; height: 900vh;}
+#section7 {position: relative; z-index: 9000; background: #f6f4f2;}
 #section8 {position: relative; z-index: 9000; background: #f6f4f2;}
-#section9 {position: relative; z-index: 9000; background: #f6f4f2; height: 900vh;}
+#section9 {position: relative; z-index: 9000; background: #f6f4f2;}
 
 
 .sec1 {position: relative; width: 100%;}
@@ -31,7 +31,7 @@
     font-family: 'OreloTrial-SemiWideLight';
     color: #888;
     text-transform: uppercase;
-    z-index: 1000;
+    z-index: 10000;
 }
 #header h1 {
     padding: 20px 30px;
